@@ -13,6 +13,7 @@ import Product from "./Product";
 import { useContext, useEffect, useRef, useState } from "react";
 import { ShopContext } from "../context/Products";
 import ProductList from "./ProductList";
+import { Button } from "@/components/ui/button"
 
 function Navbar() {
 
@@ -271,14 +272,8 @@ function Navbar() {
             }
           </div>
         ) : (
-          <button
-            onClick={() => setLoginShow(true)}
-            className="bg-[#222222] rounded text-white
-hover:bg-[#333333] text-[14px] py-[5px] px-[20px]"
-            to=""
-          >
-            <p>Sign in</p>
-          </button>
+          <Button variant="outline">Button</Button>
+          
         )}
       </div>
     </div>
