@@ -103,7 +103,7 @@ function Navbar() {
               <NavigationMenuTrigger className={"font-normal"}>
                 New Arrivals
               </NavigationMenuTrigger>
-              <NavigationMenuContent className={"flex p-0"}>
+              <NavigationMenuContent className="flex p-0 rounded-lg overflow-hidden">
                 <div className="flex flex-col w-60 h-100">
                   <h2 className="p-[10px] text-[18px]">Top Searches</h2>
                   <Link
@@ -213,9 +213,7 @@ function Navbar() {
               </p>
             </Button>
           </PopoverTrigger>
-          <PopoverContent
-            className={"absolute top-[-40px] w-fit right-25 p-0 rounded"}
-          >
+          <PopoverContent className="absolute top-[-40px] right-25 w-fit p-0 rounded-lg overflow-hidden">
             <PopoverHeader>
               <PopoverDescription className={""}>
                 <div className="flex gap-4 items-center justify-center border-b-1 h-10 p-3 border-[#dadada]">
