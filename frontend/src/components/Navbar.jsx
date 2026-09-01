@@ -215,7 +215,7 @@ function Navbar() {
       <div className="flex justify-center gap-2 items-center">
         <Popover modal={true}>
           <PopoverTrigger asChild>
-            <Button variant="outline">
+            <Button variant="outline" className={"bg-white"}>
               <Search size={16} color="#555555" />{" "}
               <p className="text-[14px] flex justify-center hover:text-[#222222] text-[#555555]">
                 Search
