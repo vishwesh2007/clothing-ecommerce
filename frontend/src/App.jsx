@@ -15,14 +15,13 @@ import Bottoms from "./pages/Bottoms";
 import Accessories from "./pages/Accessories";
 
 import { ShopContext } from "./context/Products";
-import Searchbar from "./pages/Searchbar";
 
 function App() {
-  const { loginShow, searchShow, setSearchShow } = useContext(ShopContext);
+  const { loginShow} = useContext(ShopContext);
 
   return (
     <div className="w-full">
-      <Navbar searchShow={searchShow} />
+      <Navbar />
 
       <div className="">
         <Routes>
@@ -41,8 +40,6 @@ function App() {
       </div>
 
       {loginShow && <Login />}
-
-      {searchShow && <Searchbar />}
     </div>
   );
 }

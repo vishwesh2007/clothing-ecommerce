@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { ShopContext } from "../context/Products";
 import { X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const { setLoginShow } = useContext(ShopContext);
@@ -32,11 +33,12 @@ function Login() {
     setNewPass("");
     setName("");
   };
+  const navigate = useNavigate();
   return (
-    <div
-      className={`h-full w-full left-0 z-50 top-0 items-center flex justify-center absolute bg-[#343434a5]`}
+    <div onClick={()=>navigate("/")}
+      className={`h-full w-full left-0 z-50 top-0 items-center flex justify-center absolute backdrop-blur-xs bg-accent/70`}
     >
-      <div className="text-[#222222] gap-8 flex justify-center overflow-hidden  p-5 items-center bg-white opacity-100 text-[5px] relative">
+      <div onClick={(e)=>e.stopPropagation()} className="text-[#222222] gap-8 flex justify-center overflow-hidden  p-5 items-center bg-white opacity-100 text-[5px] relative">
         <div
           className={`bg-[#202122] z-50 absolute h-120 duration-[800ms] ${
             move ? "translate-x-[-400px] pl-200" : "translate-x-[400px] pr-200"
@@ -61,7 +63,7 @@ function Login() {
           </h3>
         </div>
         <button
-          onClick={() => setLoginShow(false)}
+          onClick={()=>navigate("/")}
           className="text-[#222222] hover:text-gray-800 z-50 ease-in-out duration-150 bg-gray-50  hover:bg-gray-300 text-[15px] w-4 h-4 justify-center flex items-center rounded absolute top-[25px] right-[25px] "
         >
           <X />
