@@ -31,6 +31,15 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Topsearchlist from "./Topsearchlist";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 //====================================================================================================================================
 //====================================================================================================================================
@@ -290,62 +299,45 @@ function Navbar() {
             </PopoverHeader>
           </PopoverContent>
         </Popover>
-        <Link
-          to="/cart"
-          className="hover:bg-[#f5f5f5] flex justify-center items-center rounded-lg w-8 h-8"
-        >
+        <Button className={"w-8 h-8"} variant="ghost">
           <ShoppingBag size={16} color="#555555" />
-        </Link>
-        <Link
-          to="/whish-list"
-          className="hover:bg-[#f5f5f5] flex justify-center items-center rounded-lg w-8 h-8"
-        >
+        </Button>
+        <Button className={"w-8 h-8"} variant="ghost">
           <Heart size={16} color="#555555" />
-        </Link>
+        </Button>
         {login ? (
-          <div className="relative" ref={boxRef}>
-            <div
-              onClick={() => setClose(!open)}
-              className="hover:bg-[#f5f5f5] border-1 border-[#dadada] flex justify-center items-center rounded-lg w-8 h-8"
-            >
-              <CircleUserRound size={18} color="#555555" />
-            </div>
-            {open && (
-              <div className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] absolute flex flex-col top-10 rounded select-none right-0 bg-white">
-                <div className="border-b-1 cursor-pointer border-[#dadada] flex items-center justify-center gap-2  p-4">
-                  <CircleUserRound size={30} color="#555555" />
-                  <div className="text-[#444444]">
-                    <p className="">vishwewsh</p>
-                    <p className="text-[10px] truncate">
-                      vishwewshsitapara2007@gmail.com
-                    </p>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button className={"w-8 h-8"} variant="ghost">
+                <CircleUserRound size={30} color="#555555" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className={"w-50"}>
+              <DropdownMenuGroup>
+                <DropdownMenuLabel>
+                  <div className="cursor-pointer flex items-center justify-start gap-2 mt-1 mb-1">
+                    <CircleUserRound size={25} color="#555555" />
+                    <div className="text-[#444444]">
+                      <p className="text-primary">Vishwesh</p>
+                    </div>
                   </div>
-                </div>
-                <div className="border-b-1 border-[#dadada] text-[12px]">
-                  <p className="hover:bg-[#fafafa] pl-4 pr-4 p-2 text-[#444444]">
-                    My Profile
-                  </p>
-                  <p className="hover:bg-[#fafafa] pl-4 pr-4 p-2 text-[#444444]">
-                    My Orders
-                  </p>
-                  <p className="hover:bg-[#fafafa] pl-4 pr-4 p-2 text-[#444444]">
-                    Wishlist
-                  </p>
-                  <p className="hover:bg-[#fafafa] pl-4 pr-4 p-2 text-[#444444]">
-                    Cart
-                  </p>
-                </div>
-                <div className="border-b-1 border-[#dadada] text-[12px]">
-                  <p className="hover:bg-[#fafafa] pl-4 pr-4 p-2 text-[#444444]">
-                    Setting
-                  </p>
-                </div>
-                <div className=" hover:bg-red-50 text-[red] pl-4 pr-4 p-2 text-[12px]">
-                  <p className="">Logout</p>
-                </div>
-              </div>
-            )}
-          </div>
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Orders </DropdownMenuItem>
+                <DropdownMenuItem>Wishlist</DropdownMenuItem>
+                <DropdownMenuItem>Cart</DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem>Logout</DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
         ) : (
           <Button onClick={() => navigate("/login")} variant="ghost">
             Log in

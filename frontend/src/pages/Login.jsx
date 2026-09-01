@@ -84,14 +84,14 @@ function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 onClick={() => setUp(true)}
-                className="cursor-pointer text-[14px] py-2 border-[0.5px] w-full border-[#555555] outline-none p-[3px]"
+                className="cursor-pointer text-[14px] py-2 w-full border-1 border-input outline-none p-[3px]"
                 type="email"
               />
             </div>
             <div className=" relative">
               <p
                 onClick={() => setUpp(true)}
-                className={`select-none absolute duration-300 top-[-30px] ${upp ? "translate-y-[10px] left-0 text-[#222222] select-none text-[10px]" : "translate-y-[41px] cursor-pointer text-[12px] left-4 text-[#666666]"}`}
+                className={`select-none absolute duration-300  top-[-30px] ${upp ? "translate-y-[10px] left-0 text-[#222222] select-none text-[10px]" : "translate-y-[41px] cursor-pointer text-[12px] left-4 text-[#666666]"}`}
               >
                 Enter Password
               </p>
@@ -99,18 +99,18 @@ function Login() {
                 value={pass}
                 onChange={(e) => setPass(e.target.value)}
                 onClick={() => setUpp(true)}
-                className="cursor-pointer text-[14px] py-2 border-[0.5px] w-full border-[#555555] outline-none p-[3px]"
+                className="cursor-pointer text-[14px] py-2 border-1 border-input w-full  outline-none p-[3px]"
                 type="password"
               />
             </div>
           </div>
           <div className="w-full flex justify-center items-center gap-2 bottom-0 flex-col absolute">
-            <button className="uppercase text-[12px] h-10 border-[0.9px] ease-in-out duration-150 text-[10px]  hover:bg-[#333333] border-black p-[3px] outline-none w-full bg-black text-white">
+            <button className="uppercase text-[12px] h-10 border-[0.9px] ease-in-out duration-150 text-[10px]  hover:bg-[#333333] border-border p-[3px] outline-none w-full bg-primary text-primary-foreground">
               Login
             </button>
             <button
               onClick={() => setOff()}
-              className="uppercase text-[12px] h-10 text-[10px] bg-[#f5f5f5] hover:bg-[#eaeaea] ease-in-out duration-150 p-[3px] outline-none w-full"
+              className="uppercase text-[12px] h-10 text-[10px] bg-secondary text-secondary-foreground hover:bg-[#eaeaea] ease-in-out duration-150 p-[3px] outline-none w-full"
             >
               SignUp
             </button>
@@ -133,7 +133,7 @@ function Login() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 onClick={() => setUpn(true)}
-                className="cursor-pointer text-[14px] py-2 border-[0.5px] w-full border-[#555555] outline-none p-[3px]"
+                className="cursor-pointer text-[14px] py-2  w-full border-1 border-input outline-none p-[3px]"
                 type="text"
               />
             </div>
@@ -148,7 +148,7 @@ function Login() {
                 value={newEmail}
                 onChange={(e) => setNewEmail(e.target.value)}
                 onClick={() => setUppr(true)}
-                className="cursor-pointer text-[14px] py-2 border-[0.5px] w-full border-[#555555] outline-none p-[3px]"
+                className="cursor-pointer text-[14px] py-2  w-full border-1 border-input outline-none p-[3px]"
                 type="email"
               />
             </div>
@@ -163,18 +163,18 @@ function Login() {
                 value={newPass}
                 onChange={(e) => setNewPass(e.target.value)}
                 onClick={() => setUpr(true)}
-                className="cursor-pointer text-[14px] py-2 border-[0.5px] w-full border-[#555555] outline-none p-[3px]"
+                className="cursor-pointer text-[14px] py-2  w-full border-1 border-input outline-none p-[3px]"
                 type="password"
               />
             </div>
           </div>
           <div className="w-full flex justify-center items-center gap-2 bottom-0 flex-col absolute">
-            <button className="uppercase text-[12px] h-10 border-[0.9px] ease-in-out duration-150 text-[10px]  hover:bg-[#333333] border-black p-[3px] outline-none w-full bg-black text-white">
+            <button className="uppercase text-[12px] h-10 border-[0.9px] ease-in-out duration-150 text-primary  hover:bg-[#333333] border-primary p-[3px] outline-none w-full bg-primary text-white">
               SignUp
             </button>
             <button
               onClick={() => setOffs()}
-              className="uppercase text-[12px] h-10 text-[10px] bg-[#f5f5f5] hover:bg-[#eaeaea] ease-in-out duration-150 p-[3px] outline-none w-full"
+              className="uppercase text-[12px] h-10 text-secondary-foreground te bg-secondary hover:bg-[#eaeaea] ease-in-out duration-150 p-[3px] outline-none w-full"
             >
               Login
             </button>

@@ -8,10 +8,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Services from "./Services";
 
 function Home() {
   return (
-    <div className="bg-accent w-full h-screen flex">
+    <div className="bg-white w-full flex-col h-screen flex">
       <div className="top-0 ">
         <Carousel
           plugins={[
@@ -30,6 +31,7 @@ function Home() {
           </CarouselContent>
         </Carousel>
       </div>
+      <Services/>
     </div>
   );
 }
