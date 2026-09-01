@@ -5,7 +5,7 @@ function ProductList({ product }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="flex justify-start items-center gap-2 p-2 hover:bg-[#f5f5f5]">
+    <div className="flex justify-start items-center gap-2 p-2 hover:bg-[#fafafa]">
 
       <div className="relative w-10 h-10 overflow-hidden">
 
