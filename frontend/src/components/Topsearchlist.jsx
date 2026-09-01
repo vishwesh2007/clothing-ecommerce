@@ -5,7 +5,13 @@ function Topsearchlist({product}) {
   return (
     <div className='cursor-pointer hover:bg-[#fafafa]/90 h-fit bg-[#ffffff] p-1 flex border-[0.5px] gap-2 rounded border-[#dadada]'>
       <div className='rounded-l w-41 h-51 overflow-hidden flex justify-center items-center'>
-        <img src={product.image} className='max-w-52' alt="" />
+        <img
+  src={product.image[0]}
+  loading="lazy"
+  decoding="async"
+  className="w-full h-full object-cover"
+  alt={product.name}
+/>
       </div>
       <div className='flex flex-col w-50 gap-1 justify-start mt-5'>
         <p className="text-[13px] truncate">{product.name}</p>

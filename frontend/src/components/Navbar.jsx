@@ -36,7 +36,6 @@ import Topsearchlist from "./Topsearchlist";
 //====================================================================================================================================
 
 function Navbar() {
-
   const navigate = useNavigate();
   const { setLoginShow, searchShow, setSearchShow, login, setSearch, search } =
     useContext(ShopContext);
@@ -101,7 +100,9 @@ function Navbar() {
               <NavigationMenuLink>Trending Now</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className={"font-normal"}>New Arrivals</NavigationMenuTrigger>
+              <NavigationMenuTrigger className={"font-normal"}>
+                New Arrivals
+              </NavigationMenuTrigger>
               <NavigationMenuContent className={"flex p-0"}>
                 <div className="flex flex-col w-60 h-100">
                   <h2 className="p-[10px] text-[18px]">Top Searches</h2>
@@ -154,7 +155,9 @@ function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className={"font-normal"}>Foot Wear</NavigationMenuTrigger>
+              <NavigationMenuTrigger className={"font-normal"}>
+                Foot Wear
+              </NavigationMenuTrigger>
               <NavigationMenuContent className={"p-0"}>
                 {filterddata
                   .slice()
@@ -166,7 +169,9 @@ function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className={"font-normal"}>Shirts</NavigationMenuTrigger>
+              <NavigationMenuTrigger className={"font-normal"}>
+                Shirts
+              </NavigationMenuTrigger>
               <NavigationMenuContent className={"p-0"}>
                 {shirtfilterddata
                   .slice()
@@ -178,7 +183,9 @@ function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className={"font-normal"}x>Bottoms</NavigationMenuTrigger>
+              <NavigationMenuTrigger className={"font-normal"} x>
+                Bottoms
+              </NavigationMenuTrigger>
               <NavigationMenuContent className={"p-0"}>
                 {bottomfilterddata
                   .slice()
@@ -225,10 +232,38 @@ function Navbar() {
                 <div className=" flex flex-col pl-3 pr-3 pt-2 pb-2 gap-1 border-b-1 border-[#dadada]">
                   <p className="text-[10px]">Quick Search</p>
                   <div className="flex items-center justify-start gap-2">
-                    <Button variant="outline" size="xs" onClick={() => setSearch("Shirt")} name={"Shirt"}>Shirt</Button>
-                    <Button variant="outline" size="xs" onClick={() => setSearch("Pants")} name={"Pants"}>Pants</Button>
-                    <Button variant="outline" size="xs" onClick={() => setSearch("Jeans")} name={"Jeans"}>Jeans</Button>
-                    <Button variant="outline" size="xs" onClick={() => setSearch("Shoes")} name={"Shoes"}>Shoes</Button>
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      onClick={() => setSearch("Shirt")}
+                      name={"Shirt"}
+                    >
+                      Shirt
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      onClick={() => setSearch("Pants")}
+                      name={"Pants"}
+                    >
+                      Pants
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      onClick={() => setSearch("Jeans")}
+                      name={"Jeans"}
+                    >
+                      Jeans
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      onClick={() => setSearch("Shoes")}
+                      name={"Shoes"}
+                    >
+                      Shoes
+                    </Button>
                   </div>
                 </div>
                 <div className="pl-3 pr-3 pt-2 pb-2">
@@ -236,29 +271,21 @@ function Navbar() {
                 </div>
                 {search ? (
                   <div className="w-200 h-100 overflow-y-scroll pl-3 pr-3 pb-2 gap-2 custom-scrollbar grid grid-cols-2">
-                    {filterData.map((product, index) => {
-                      return (
-                        <Topsearchlist
-                          key={`${product._id}-${index}`}
-                          product={product}
-                        />
-                      );
-                    })}
+                    {filterData.slice(0, 12).map((product, index) => (
+                      <Topsearchlist
+                        key={`${product._id}-${index}`}
+                        product={product}
+                      />
+                    ))}
                   </div>
                 ) : (
                   <div className="w-200 h-100 overflow-y-scroll pl-3 pr-3 pb-2 gap-2 custom-scrollbar grid grid-cols-2">
-                    {products
-                      .slice()
-                      .sort(() => Math.random() - 0.5)
-                      .slice(0, 5)
-                      .map((product, index) => {
-                        return (
-                          <Topsearchlist
-                            key={`${product._id}-${index}`}
-                            product={product}
-                          />
-                        );
-                      })}
+                    {products.slice(0, 6).map((product, index) => (
+                      <Topsearchlist
+                        key={`${product._id}-${index}`}
+                        product={product}
+                      />
+                    ))}
                   </div>
                 )}
               </PopoverDescription>
@@ -322,7 +349,7 @@ function Navbar() {
             )}
           </div>
         ) : (
-          <Button onClick={()=>navigate("/login")} variant="ghost">
+          <Button onClick={() => navigate("/login")} variant="ghost">
             Log in
           </Button>
         )}
