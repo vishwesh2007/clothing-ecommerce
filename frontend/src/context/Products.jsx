@@ -4,7 +4,7 @@ import { products } from "../assets/frontend_assets/assets";
 export const ShopContext = createContext();
 
 const ProductsProvider = (props) =>{
-    const [login, setLogin] = useState(true)
+    const [login, setLogin] = useState(false)
     const [loginShow, setLoginShow] = useState(false);
     const [searchShow, setSearchShow] = useState(false);
     const [search, setSearch] = useState("");
