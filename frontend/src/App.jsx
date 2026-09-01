@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
@@ -43,6 +44,8 @@ function App() {
       {loginShow && <Login />}
 
       {searchShow && <Searchbar />}
+      
+      <SpeedInsights />
     </div>
   );
 }
