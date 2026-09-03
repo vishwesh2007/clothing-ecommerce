@@ -46,7 +46,8 @@ import {
 
 function Navbar() {
   const navigate = useNavigate();
-  const { setLoginShow, searchShow, setSearchShow, login, setSearch, search } =
+
+  const {  searchShow, setSearchShow, login, setSearch, search } =
     useContext(ShopContext);
 
   const close = () => {
@@ -323,18 +324,18 @@ function Navbar() {
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Orders </DropdownMenuItem>
-                <DropdownMenuItem>Wishlist</DropdownMenuItem>
-                <DropdownMenuItem>Cart</DropdownMenuItem>
+                <DropdownMenuItem onClick={()=>navigate('/cart')}> <p className="text-[12px]">Profile</p> </DropdownMenuItem>
+                <DropdownMenuItem onClick={()=>navigate("/order")}> <p className="text-[12px]">Orders</p> </DropdownMenuItem>
+                <DropdownMenuItem onClick={()=>navigate("/whishlist")}> <p className="text-[12px]">Wishlist</p> </DropdownMenuItem>
+                <DropdownMenuItem onClick={()=>navigate("/")}> <p className="text-[12px]">Cart</p> </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem>Settings</DropdownMenuItem>
+                <DropdownMenuItem onClick={()=>navigate("/")}><p className="text-[12px]">Settings</p></DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem>Logout</DropdownMenuItem>
+                <DropdownMenuItem><p className="text-[12px]">Logout</p></DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>

@@ -346,7 +346,6 @@ import razorpay_logo from "./razorpay_logo.png";
 import stripe_logo from "./stripe_logo.png";
 import cross_icon from "./cross_icon.png";
 
-
 import banner1 from "./../banners/banners (1).avif";
 import banner2 from "./../banners/banners (2).avif";
 import banner3 from "./../banners/banners (3).avif";
@@ -367,26 +366,67 @@ import banner17 from "./../banners/banners (17).avif";
 import banner18 from "./../banners/banners (18).avif";
 import banner19 from "./../banners/banners (19).avif";
 
+import homebanner1 from "./../banners/banner (1).webp";
+import homebanner2 from "./../banners/banner (2).webp";
+import homebanner3 from "./../banners/banner (3).webp";
+
+import category1 from "./../category/category (1).avif";
+import category2 from "./../category/category (1).jpg";
+import category3 from "./../category/category (1).webp";
+import category4 from "./../category/category (2).avif";
+import category5 from "./../category/category (2).webp";
+import category6 from "./../category/category (4).webp";
+import category7 from "./../category/category (5).avif";
+import category8 from "./../category/category (6).avif";
+
+export const category = [
+  category1,
+  category2,
+  category3,
+  category4,
+  category5,
+  category6,
+  category7,
+  category8,
+];
+import categorysec1 from "./../category/category sec (1).avif";
+import categorysec2 from "./../category/category sec (1).webp";
+import categorysec3 from "./../category/category sec (2).avif";
+import categorysec4 from "./../category/category sec (2).webp";
+import categorysec5 from "./../category/category sec (3).avif";
+import categorysec6 from "./../category/category sec (3).webp";
+
+export const categorysec = [
+  categorysec1,
+  categorysec2,
+  categorysec3,
+  categorysec4,
+  categorysec5,
+  categorysec6,
+];
+
+export const homeBanner = [homebanner1, homebanner2, homebanner3];
+
 export const bannerImages = [
-    banner1,
-    banner2,
-    banner3,
-    banner4,
-    banner5,
-    banner6,
-    banner7,
-    banner8,
-    banner9,
-    banner10,
-    banner11,
-    banner12,
-    banner13,
-    banner14,
-    banner15,
-    banner16,
-    banner17,
-    banner18,
-    banner19
+  banner1,
+  banner2,
+  banner3,
+  banner4,
+  banner5,
+  banner6,
+  banner7,
+  banner8,
+  banner9,
+  banner10,
+  banner11,
+  banner12,
+  banner13,
+  banner14,
+  banner15,
+  banner16,
+  banner17,
+  banner18,
+  banner19,
 ];
 
 export const assets = {
