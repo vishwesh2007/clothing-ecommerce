@@ -10,7 +10,7 @@ function ProductList({ product }) {
       <div className="relative w-10 h-10 overflow-hidden">
 
         {!loaded && (
-          <Skeleton className="absolute inset-0 w-full h-full rounded-none bg-[#111111]" />
+          <Skeleton className="absolute inset-0 w-full h-full rounded-none bg-[#cccccc]" />
         )}
 
         <img

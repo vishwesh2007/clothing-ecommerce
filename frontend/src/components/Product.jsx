@@ -12,7 +12,7 @@ function Product({ product }) {
       <div className="relative overflow-hidden h-40 mb-1 w-full">
 
         {!loaded && (
-          <Skeleton className="absolute inset-0 w-full h-full rounded-none bg-black/10" />
+          <Skeleton className="absolute inset-0 w-full h-full rounded-none bg-[#cccccc]" />
         )}
 
         <img

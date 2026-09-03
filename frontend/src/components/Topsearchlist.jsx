@@ -10,7 +10,7 @@ function Topsearchlist({ product }) {
     <div className="cursor-pointer hover:bg-[#fafafa]/90 h-fit bg-[#ffffff] p-1 flex border-[0.5px] gap-2 rounded border-[#dadada]">
       <div className="relative rounded-l w-41 h-51 overflow-hidden flex justify-center items-center">
         {!loaded && (
-          <Skeleton className="absolute inset-0 w-full h-full rounded-none bg-[#111111]" />
+          <Skeleton className="absolute inset-0 w-full h-full rounded-none bg-[#cccccc]" />
         )}
 
         <img
