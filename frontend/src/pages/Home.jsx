@@ -50,9 +50,9 @@ function Home() {
         </div>
         <div className="gap-3 flex flex-col justify-center items-center" onClick={() => navigate("/")}>
           <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-            <img src={category[1]} alt="Oversized T-Shirt" />
+            <img src={category[1]} alt="Party Wear" />
           </div>
-          <p className="text-[10px] text-[#666666]">Oversized T-Shirt</p>
+          <p className="text-[10px] text-[#666666]">Party Wear</p>
         </div>
         <div className="gap-3 flex flex-col justify-center items-center" onClick={() => navigate("/")}>
           <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
@@ -62,33 +62,33 @@ function Home() {
         </div>
         <div className="gap-3 flex flex-col justify-center items-center" onClick={() => navigate("/")}>
           <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-            <img src={category[3]} alt="Casual Wears" />
-          </div>
-          <p className="text-[10px] text-[#666666]">Casual Wears</p>
-        </div>
-        <div className="gap-3 flex flex-col justify-center items-center" onClick={() => navigate("/")}>
-          <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-            <img src={category[4]} alt="Party Wear" />
-          </div>
-          <p className="text-[10px] text-[#666666]">Party Wear</p>
-        </div>
-        <div className="gap-3 flex flex-col justify-center items-center" onClick={() => navigate("/")}>
-          <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-            <img src={category[5]} alt="Office Wear" />
+            <img src={category[3]} alt="Office Wear" />
           </div>
           <p className="text-[10px] text-[#666666]">Office Wear</p>
         </div>
         <div className="gap-3 flex flex-col justify-center items-center" onClick={() => navigate("/")}>
           <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-            <img src={category[6]} alt="Sunglasses" />
+            <img src={category[4]} alt="Sunglasses" />
           </div>
           <p className="text-[10px] text-[#666666]">Sunglasses</p>
         </div>
         <div className="gap-3 flex flex-col justify-center items-center" onClick={() => navigate("/")}>
           <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-            <img src={category[7]} alt="Trending Bottoms" />
+            <img src={category[5]} alt="Trending Bottoms" />
           </div>
           <p className="text-[10px] text-[#666666]">Trending Bottoms</p>
+        </div>
+        <div className="gap-3 flex flex-col justify-center items-center" onClick={() => navigate("/")}>
+          <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
+            <img src={category[6]} alt="Casual Wears" />
+          </div>
+          <p className="text-[10px] text-[#666666]">Casual Wears</p>
+        </div>
+        <div className="gap-3 flex flex-col justify-center items-center" onClick={() => navigate("/")}>
+          <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
+            <img src={category[7]} alt="Oversized T-Shirt" />
+          </div>
+          <p className="text-[10px] text-[#666666]">Oversized T-Shirt</p>
         </div>
       </div>
       <Title text1={"POPULAR CATEGORIES"}/>
