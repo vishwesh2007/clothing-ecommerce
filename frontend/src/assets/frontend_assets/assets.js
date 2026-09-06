@@ -4,93 +4,92 @@ const getImg = (imageName, width = 500) => {
 import logo from "./logo.svg";
 import logo2 from "./logo1.svg";
 
-
 export const categoryItems = [
   {
     id: "cat_belts",
     label: "Belts",
     image:
-      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_1",
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,h_200,c_limit,q_auto,f_auto/category_1",
   },
   {
     id: "cat_party",
     label: "Party Wear",
     image:
-      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_2",
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,h_200,c_limit,q_auto,f_auto/category_2",
   },
   {
     id: "cat_bags",
     label: "Bags",
     image:
-      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category2",
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,h_200,c_limit,q_auto,f_auto/category2",
   },
   {
     id: "cat_office",
     label: "Office Wear",
     image:
-      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_4",
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,h_200,c_limit,q_auto,f_auto/category_4",
   },
   {
     id: "cat_sunglasses",
     label: "Sunglasses",
     image:
-      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_5",
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,h_200,c_limit,q_auto,f_auto/category_5",
   },
   {
     id: "cat_bottoms",
     label: "Trending Bottoms",
     image:
-      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_6",
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,h_200,c_limit,q_auto,f_auto/category_6",
   },
   {
     id: "cat_casual",
     label: "Casual Wears",
     image:
-      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category1",
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,h_200,c_limit,q_auto,f_auto/category1",
   },
   {
     id: "cat_oversized",
     label: "Oversized T-Shirt",
     image:
-      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category",
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,h_200,c_limit,q_auto,f_auto/category",
   },
 ];
 
 export const categorysec = [
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/category_sec_3",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/category_sec_2",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/category_sec_1",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/category_sec3",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/category_sec2",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/category_sec1",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_600,c_limit,q_auto,f_auto/category_sec_3",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_600,c_limit,q_auto,f_auto/category_sec_2",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_600,c_limit,q_auto,f_auto/category_sec_1",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_600,c_limit,q_auto,f_auto/category_sec3",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_600,c_limit,q_auto,f_auto/category_sec2",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_600,c_limit,q_auto,f_auto/category_sec1",
 ];
 
 export const homeBanner = [
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banner_1.webp",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banner_2.webp",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banner_3.webp",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banner_1.webp",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banner_2.webp",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banner_3.webp",
 ];
 
 export const bannerImages = [
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_1.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_2.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_3.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_4.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_5.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_6.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_7.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_8.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_9.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_10.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_11.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_12.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_13.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_14.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_15.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_16.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_17.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_18.avif",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_19.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_1.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_2.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_3.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_4.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_5.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_6.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_7.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_8.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_9.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_10.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_11.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_12.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_13.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_14.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_15.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_16.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_17.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_18.avif",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_1350,h_461,c_limit,q_auto,f_auto/banners_19.avif",
 ];
 
 export const smallBanners = [

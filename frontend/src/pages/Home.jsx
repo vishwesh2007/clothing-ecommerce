@@ -74,14 +74,14 @@ function Home() {
       </div>
       <Services />
       <div className="justify-center flex items-center p-2">
-        <div className="flex justify-start items-center gap-8 h-40 customm-scrollbar bg-white overflow-x-scroll min-[1024px]:overflow-hidden">
+        <div className="flex justify-start items-center gap-8 h-40 min-h-[160px] customm-scrollbar bg-white overflow-x-scroll min-[1024px]:overflow-hidden">
           {categoryItems.map((item) => (
             <div
               key={item.id}
               className="gap-3 flex flex-col justify-center items-center shrink-0 cursor-pointer"
               onClick={() => navigate("/")}
             >
-              <div className="w-[80px] h-[80px] rounded-full overflow-hidden">
+              <div className="w-[80px] h-[80px] rounded-full overflow-hidden shrink-0">
                 <img
                   src={item.image}
                   alt={item.label}
