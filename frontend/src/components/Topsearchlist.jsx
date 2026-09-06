@@ -1,42 +1,61 @@
 import React, { useContext, useState } from "react";
+
 import { ShopContext } from "../context/Products";
 import { Skeleton } from "@/components/ui/skeleton";
 
 function Topsearchlist({ product }) {
   const { currency } = useContext(ShopContext);
+
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="cursor-pointer hover:bg-[#fafafa]/90 h-fit bg-[#ffffff] p-1 flex border-[0.5px] gap-2 rounded border-[#dadada]">
-      <div className="relative rounded-l w-41 h-51 overflow-hidden flex justify-center items-center">
-        {!loaded && (
-          <Skeleton className="absolute inset-0 w-full h-full rounded-none bg-[#cccccc]" />
-        )}
+    <div className="relative">
+      {!loaded && (
+        <div className="flex items-start justify-start gap-1 rounded-[10px] bg-[#f5f5f5] lg:gap-5">
+          <Skeleton className="h-40 w-35 shrink-0 rounded-l-[10px] md:h-48 md:w-43 lg:h-50 lg:w-45" />
 
-        <img
-          src={product.image[0]}
-          loading="lazy"
-          decoding="async"
-          onLoad={() => setLoaded(true)}
-          className={`w-full h-full object-cover ${
-            loaded ? "opacity-100" : "opacity-0"
-          }`}
-          alt={product.name}
-        />
-      </div>
+          <div className="flex w-45 flex-col justify-center gap-3 p-2">
+            <Skeleton className="h-4 w-full" />
 
-      <div className="flex flex-col w-50 gap-1 justify-start mt-5">
-        <p className="text-[13px] truncate">{product.name}</p>
+            <Skeleton className="h-5 w-20" />
 
-        <p className="text-[18px] font-bold text-[6px]">
-          {currency}
-          {product.price}
-        </p>
+            <Skeleton className="mt-6 h-8 w-32 rounded-[5px]" />
+          </div>
+        </div>
+      )}
 
-        <p className="text-[13px] px-2 py-3 w-full font-bold border-[0.5px] border-[#dadada] text-[#555555] p-1">
-          Member Price : {currency}
-          {product.price - product.price * 0.2}
-        </p>
+      <div
+        className={`flex items-start justify-start gap-1 rounded-[10px] bg-[#f5f5f5] transition-opacity duration-300 lg:gap-5 ${
+          loaded ? "opacity-100" : "absolute inset-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="h-40 w-35 shrink-0 overflow-hidden rounded-l-[10px] md:h-48 md:w-43 lg:h-50 lg:w-45">
+          <img
+            src={product.image[0]}
+            loading="lazy"
+            decoding="async"
+            onLoad={() => setLoaded(true)}
+            onError={() => setLoaded(true)}
+            className="h-full w-full max-w-none object-cover"
+            alt={product.name}
+          />
+        </div>
+
+        <div className="flex w-45 flex-col justify-center gap-1 p-2">
+          <p className="text-[14px]">
+            {product.name}
+          </p>
+
+          <p className="text-[18px] font-bold">
+            {currency}
+            {product.price}
+          </p>
+
+          <p className="mt-6 w-fit rounded-[5px] bg-[#e5e5e5] p-2 text-[12px] font-bold text-[#555555]">
+            Member Price : {currency}
+            {product.price - product.price * 0.2}
+          </p>
+        </div>
       </div>
     </div>
   );

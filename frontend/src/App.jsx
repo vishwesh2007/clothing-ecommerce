@@ -23,7 +23,7 @@ function App() {
     <div className="w-full">
       <Navbar />
 
-      <div className="">
+      <div className="hidden">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />

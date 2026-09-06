@@ -2,6 +2,7 @@ const getImg = (imageName) => {
   return `https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/${imageName}`;
 };
 import logo from "./logo.svg";
+import logo2 from "./logo1.svg";
 
 export const category = [
   "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/category_1",
@@ -52,7 +53,7 @@ export const bannerImages = [
 ];
 
 export const assets = {
-  logo,
+  logo,logo2
 };
 
 export const products = [
