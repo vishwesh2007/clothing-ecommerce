@@ -113,7 +113,7 @@ function Navbar() {
 
   return (
     <div
-      className={`sticky top-0 w-full z-50 py-3 sm:py-1 md:py-2 lg:py-1  bg-white border-b border-[#dadada] flex px-2 sm:px-10 justify-between items-center ${searchShow ? "pointer-events-none" : "pointer-events-auto"}`}
+      className={`sticky top-0 w-full z-50 py-3 sm:py-1 md:py-2 lg:py-1  bg-white flex px-2 sm:px-10 justify-between items-center ${searchShow ? "pointer-events-none" : "pointer-events-auto"}`}
     >
       <Link to="/" className="flex justify-center items-center gap-1">
         <div className="sm:hidden flex">
@@ -132,11 +132,11 @@ function Navbar() {
                 }
               >
                 <div className="flex justify-start items-center gap-2 w-full">
-                  <div className="items-center shrink-0 justify-center rounded-full text-white !bg-[#222222] flex bg-accent w-10 h-10">
+                  <div className="items-center shrink-0 justify-center rounded-full text-white !bg-[#222222] flex bg-accent w-15 h-15">
                     V
                   </div>
                   <p className="">
-                    <h1 className="text-[14px] text-[#222222] font-medium">
+                    <h1 className="text-[20px] text-[#222222] font-medium">
                       Vishwesh
                     </h1>
                     <h3 className="text-[10px] text-[#666666]">Customer</h3>
@@ -155,117 +155,116 @@ function Navbar() {
                 <div className="size-full">
                   <div className="flex flex-col gap-2">
                     <div>
-                      <h1 className="border-b border-[#E5E5E5] p-2 text-sm font-semibold text-[#F97316]">
+                      <h1 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
                         Menu
                       </h1>
 
-                      <div className="flex flex-col text-[12px]">
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Flame size={14} />
+                      <div className="flex flex-col text-[14px]">
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Flame size={18} />
                           Trending Now
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Sparkles size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Sparkles size={18} />
                           New Arrivals
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Tag size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Tag size={18} />
                           Best Offer
                         </p>
                       </div>
                     </div>
 
                     <div>
-                      <h1 className="border-b border-[#E5E5E5] p-2 text-sm font-semibold text-[#F97316]">
+                      <h1 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
                         Shop
                       </h1>
 
-                      <div className="flex flex-col text-[12px]">
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Shirt size={14} />
+                      <div className="flex flex-col text-[14px]">
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Shirt size={18} />
                           Shirts
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <ShirtIcon size={14} />
-                          T-Shirts
-                        </p>
-
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <CircleDot size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <CircleDot size={18} />
                           Bottoms
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Footprints size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <ShirtIcon size={18} />
+                          T-Shirts
+                        </p>
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Footprints size={18} />
                           Footwear
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Shirt size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Shirt size={18} />
                           Hoodies & Jackets
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Watch size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Watch size={18} />
                           Accessories
                         </p>
                       </div>
                     </div>
 
                     <div>
-                      <h1 className="border-b border-[#E5E5E5] p-2 text-sm font-semibold text-[#F97316]">
+                      <h1 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
                         Collections
                       </h1>
 
-                      <div className="flex flex-col text-[12px]">
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Crown size={14} />
+                      <div className="flex flex-col text-[14px]">
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Crown size={18} />
                           Best Sellers
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Zap size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Zap size={18} />
                           New Drops
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Palette size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Palette size={18} />
                           Graphic Collection
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Maximize size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Maximize size={18} />
                           Oversized Collection
                         </p>
                       </div>
                     </div>
 
                     <div>
-                      <h1 className="border-b border-[#E5E5E5] p-2 text-sm font-semibold text-[#F97316]">
+                      <h1 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
                         Account
                       </h1>
 
-                      <div className="flex flex-col text-[12px]">
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <User size={14} />
+                      <div className="flex flex-col text-[14px]">
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <User size={18} />
                           My Account
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Package size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Package size={18} />
                           My Orders
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <Heart size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <Heart size={18} />
                           Wishlist
                         </p>
 
-                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#FFF7ED] hover:text-[#F97316]">
-                          <ShoppingBag size={14} />
+                        <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
+                          <ShoppingBag size={18} />
                           My Cart
                         </p>
                       </div>
