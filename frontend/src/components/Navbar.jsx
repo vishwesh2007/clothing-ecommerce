@@ -102,11 +102,14 @@ function Navbar() {
       >
         <div className="sm:hidden flex">
           <Drawer swipeDirection="left">
-            <DrawerTrigger asChild={false}>
-              <div className="w-45 border h-10 sm:w-30 sm:h-8 flex items-center gap-2 px-3 rounded-lg cursor-pointer bg-white hover:bg-accent">
-                <Search size={16} color="#555555" />
-                <span className="text-[14px] text-[#555555]">Search</span>
-              </div>
+            <DrawerTrigger asChild>
+              <Button
+                variant="ghost"
+                aria-label="Open Menu"
+                className="!h-10 !w-10 !p-0 [&_svg]:!size-[20px]"
+              >
+                <TextAlignJustify color="black" />
+              </Button>
             </DrawerTrigger>
             <DrawerContent className={"!rounded-none"}>
               <DrawerHeader
