@@ -52,6 +52,15 @@ export const bannerImages = [
   "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/banners_19.avif",
 ];
 
+export const smallBanners= [
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/smallbanner_1",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/smallbanner_2",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/smallbanner_3",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/smallbanner_4",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/smallbanner_5",
+  "https://res.cloudinary.com/wp6a9yvf/image/upload/q_auto,f_auto/smallbanner_6",
+];
+
 export const assets = {
   logo,logo2
 };

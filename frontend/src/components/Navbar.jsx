@@ -55,8 +55,6 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
 import Topsearchlist from "./Topsearchlist";
 
 //====================================================================================================================================
@@ -85,21 +83,6 @@ function Navbar() {
     product.name.toLowerCase().includes(search.toLowerCase()),
   );
 
-  const [open, setClose] = useState(false);
-
-  const boxRef = useRef(null);
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (boxRef.current && !boxRef.current.contains(event.target)) {
-        setClose(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   const filterddata = products.filter((product) =>
     product.name.toLowerCase().includes("shoes"),
@@ -131,11 +114,11 @@ function Navbar() {
             <DrawerContent className={"!rounded-none"}>
               <DrawerHeader
                 className={
-                  "flex flex-row w-full justify-center items-center bg-[#fefefe] pb-8 pt-8"
+                  "flex flex-row w-full justify-center items-center bg-[#fafafa] pb-7 pt-7"
                 }
               >
                 <div className="flex justify-start items-center gap-2 w-full">
-                  <div className="items-center shrink-0 justify-center rounded-full text-white !bg-[#222222] flex bg-accent w-15 h-15">
+                  <div className="items-center shrink-0 justify-center text-2xl rounded-full text-white bg-[#222222] flex w-15 h-15">
                     V
                   </div>
                   <p className="">
@@ -154,7 +137,7 @@ function Navbar() {
                   }
                 />
               </DrawerHeader>
-              <div className="flex-1 overflow-scroll select-none custom-scrollbar bg-white px-2 text-[#525252]">
+              <div className="flex-1 overflow-scroll select-none customm-scrollbar bg-white px-2 text-[#525252]">
                 <div className="size-full">
                   <div className="flex flex-col gap-2">
                     <div>
@@ -383,7 +366,7 @@ function Navbar() {
                   })}
               </NavigationMenuContent>
             </NavigationMenuItem>
-            <NavigationMenuItem className={""}>
+            <NavigationMenuItem className={"min-[530px]:flex hidden"}>
               <NavigationMenuLink>Offer</NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
@@ -395,8 +378,8 @@ function Navbar() {
           <DrawerTrigger
             render={
               <Button
-                variant="secondary"
-                className={"w-45 h-10 sm:w-30 sm:h-8 flex justify-start"}
+                variant="outline"
+                className={"w-45 border-none h-10 sm:w-30 sm:h-8 flex justify-start"}
               >
                 <Search size={16} color="#555555" />{" "}
                 <p className="text-[14px] hover:text-[#222222] text-[#555555]">
@@ -423,7 +406,7 @@ function Navbar() {
                 </div>
                 <div>
                   <DrawerClose
-                    render={<Button className={"w-20 h-10"}>Close</Button>}
+                    render={<Button onClick={()=>close()} className={"w-20 h-10"}>Close</Button>}
                   />
                 </div>
               </div>
@@ -490,7 +473,7 @@ function Navbar() {
             </div>
           </DrawerContent>
         </Drawer>
-        <div className="flex">
+        <div className="flex gap-0 md:gap-2">
           <Button className={"w-8 h-8"} variant="ghost">
             <ShoppingBag size={16} color="#555555" />
           </Button>
