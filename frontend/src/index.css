@@ -9,16 +9,14 @@
 
 /* Font-face with font-display swap for performance */
 @font-face {
-  font-family: "jakarta";
-  src: url("../public/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
-  font-weight: 200 800;
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Play";
-  src: url("../public/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
-  font-weight: 400 900;
+  font-family: "Playfair Display";
+  src: url("./assets/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
   font-display: swap;
 }
 

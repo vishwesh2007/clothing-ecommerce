@@ -1,27 +1,34 @@
 import React from "react";
+
 import {
   bannerImages,
   categoryItems,
   smallBanners,
 } from "./../assets/frontend_assets/assets";
+
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
+
 import Autoplay from "embla-carousel-autoplay";
+
 import Services from "../components/Services";
+
 import { useNavigate } from "react-router-dom";
+
 import Title from "@/components/Title";
+
 import ImageLoader from "../components/ImageLoader";
 
 function Home() {
   const navigate = useNavigate();
+
   return (
-    <div className="bg-white w-full flex-col h-full flex">
-      <div className="top-0 min-[1025px]:flex hidden">
+    <div className="flex h-full w-full flex-col bg-white">
+      
+      <div className="top-0 hidden min-[1025px]:flex">
         <Carousel
           plugins={[
             Autoplay({
@@ -29,25 +36,28 @@ function Home() {
             }),
           ]}
         >
-          <CarouselContent className={"cursor-pointer"}>
+          <CarouselContent className="cursor-pointer">
             {bannerImages.slice(0, 3).map((banner, index) => (
               <CarouselItem key={index}>
-                <img
-                  src={banner}
-                  alt={`Banner ${index + 1}`}
-                  width="1350"
-                  height="461"
-                  fetchPriority="high"
-                  loading={index === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                  className="w-full h-auto object-cover"
-                />
+                <div className="w-full aspect-[1350/461] overflow-hidden">
+                  <ImageLoader
+                    src={banner}
+                    alt={`Banner ${index + 1}`}
+                    width="1350"
+                    height="461"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    className="block h-full w-full object-cover"
+                    skeletonClassName="rounded-none"
+                  />
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
       </div>
-      <div className="top-0 max-[1025px]:flex hidden">
+
+      <div className="top-0 hidden max-[1025px]:flex">
         <Carousel
           plugins={[
             Autoplay({
@@ -55,48 +65,59 @@ function Home() {
             }),
           ]}
         >
-          <CarouselContent className={"cursor-pointer"}>
+          <CarouselContent className="cursor-pointer">
             {smallBanners.slice(0, 3).map((banner, index) => (
               <CarouselItem key={index}>
-                <ImageLoader
-                  src={banner}
-                  alt={`Small Banner ${index + 1}`}
-                  width="412"
-                  height="530"
-                  loading={index === 0 ? "eager" : "lazy"}
-                  className="w-full h-auto object-cover"
-                  skeletonClassName="rounded-none"
-                />
+                <div className="w-full aspect-[412/530] overflow-hidden">
+                  <ImageLoader
+                    src={banner}
+                    alt={`Small Banner ${index + 1}`}
+                    width="412"
+                    height="530"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    className="block h-full w-full object-cover"
+                    skeletonClassName="rounded-none"
+                  />
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
       </div>
+
       <Services />
-      <div className="justify-center flex items-center p-2">
-        <div className="flex justify-start items-center gap-8 h-40 min-h-[160px] customm-scrollbar bg-white overflow-x-scroll min-[1024px]:overflow-hidden">
+
+      <div className="flex items-center justify-center p-2">
+        <div className="customm-scrollbar flex h-40 min-h-[160px] items-center justify-start gap-8 overflow-x-scroll bg-white min-[1024px]:overflow-hidden">
+          
           {categoryItems.map((item) => (
             <div
               key={item.id}
-              className="gap-3 flex flex-col justify-center items-center shrink-0 cursor-pointer"
+              className="flex shrink-0 cursor-pointer flex-col items-center justify-center gap-3"
               onClick={() => navigate("/")}
             >
-              <div className="w-[80px] h-[80px] rounded-full overflow-hidden shrink-0">
-                <img
+              <div className="h-[80px] w-[80px] shrink-0 overflow-hidden rounded-full">
+                <ImageLoader
                   src={item.image}
                   alt={item.label}
                   width="80"
                   height="80"
                   loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
+                  className="block h-full w-full object-cover"
+                  skeletonClassName="rounded-full"
                 />
               </div>
-              <p className="text-[10px] text-[#666666]">{item.label}</p>
+
+              <p className="text-[10px] text-[#666666]">
+                {item.label}
+              </p>
             </div>
           ))}
+
         </div>
       </div>
+
       <Title text1={"POPULAR CATEGORIES"} />
     </div>
   );

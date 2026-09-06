@@ -260,8 +260,11 @@ function Navbar() {
         </div>
         <img
           src={assets.logo}
-          className="w-40 sm:flex hidden"
+          className="w-40 h-auto sm:flex hidden"
           alt="Venanco Logo"
+          width="160"
+          height="40"
+          fetchPriority="high"
         />
       </Link>
       <div className="ml-2">
