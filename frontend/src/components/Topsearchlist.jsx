@@ -25,7 +25,7 @@ function Topsearchlist({ product }) {
       )}
 
       <div
-        className={`flex items-start justify-start gap-1 rounded-[10px] bg-[#f5f5f5] transition-opacity duration-300 lg:gap-5 ${
+        className={`flex items-start justify-start gap-1 rounded-[10px] bg-[#fefefe] transition-opacity duration-300 lg:gap-5 ${
           loaded ? "opacity-100" : "absolute inset-0 opacity-0 pointer-events-none"
         }`}
       >
@@ -51,7 +51,7 @@ function Topsearchlist({ product }) {
             {product.price}
           </p>
 
-          <p className="mt-6 w-fit rounded-[5px] bg-[#e5e5e5] p-2 text-[12px] font-bold text-[#555555]">
+          <p className="mt-6 w-fit rounded-[5px] bg-[#fafafa] p-2 text-[12px] font-bold text-[#555555]">
             Member Price : {currency}
             {product.price - product.price * 0.2}
           </p>
