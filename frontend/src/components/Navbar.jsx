@@ -120,8 +120,11 @@ function Navbar() {
           <Drawer swipeDirection="left" className={""}>
             <DrawerTrigger
               render={
-                <Button variant="ghost">
-                  <TextAlignJustify color="black" size={15} />
+                <Button
+                  variant="ghost"
+                  className="!h-10 !w-10 !p-0 [&_svg]:!size-[20px]"
+                >
+                  <TextAlignJustify color="black" />
                 </Button>
               }
             />
