@@ -1,35 +1,19 @@
-import React, { useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
+import React from "react";
 
 function ProductList({ product }) {
-  const [loaded, setLoaded] = useState(false);
-
   return (
-    <div className="flex justify-start items-center gap-2 p-2 hover:bg-[#fafafa]">
-
-      <div className="relative w-10 h-10 overflow-hidden">
-
-        {!loaded && (
-          <Skeleton className="absolute inset-0 w-full h-full rounded-none bg-[#cccccc]" />
-        )}
-
-        <img
-          className={`w-full h-full object-cover ${
-            loaded ? "opacity-100" : "opacity-0"
-          }`}
-          src={product.image[0]}
-          loading="lazy"
-          decoding="async"
-          onLoad={() => setLoaded(true)}
-          alt={product.name}
-        />
-
+    <div className="flex items-center justify-between px-3 py-2.5 hover:bg-[#fafafa] transition-colors cursor-pointer border-b border-[#f0f0f0] last:border-none">
+      <div className="flex flex-col overflow-hidden pr-2">
+        <p className="text-[13px] font-medium text-[#222222] truncate">
+          {product.name}
+        </p>
+        <span className="text-[11px] text-[#777777]">
+          {product.subCategory || product.category}
+        </span>
       </div>
-
-      <p className="text-[14px] truncate">
-        {product.name}
-      </p>
-
+      <span className="text-[13px] font-semibold text-[#222222] shrink-0">
+        ₹{product.price}
+      </span>
     </div>
   );
 }

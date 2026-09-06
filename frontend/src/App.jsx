@@ -23,7 +23,7 @@ function App() {
     <div className="w-full">
       <Navbar />
 
-      <div className="">
+      <main role="main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
@@ -37,7 +37,7 @@ function App() {
           <Route path="/bottoms" element={<Bottoms />} />
           <Route path="/accessories" element={<Accessories />} />
         </Routes>
-      </div>
+      </main>
 
       {loginShow && <Login />}
     </div>

@@ -7,33 +7,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font-face with font-display swap for performance */
 @font-face {
   font-family: "jakarta";
   src: url("../public/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 800;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Play";
   src: url("../public/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 900;
+  font-display: swap;
 }
 
 .titlll {
-  font-family: "Play";
+  font-family: "Play", serif;
 }
 
-* {
-  font-family: "jakarta";
+/* Optimized: Apply font-family to body instead of universal selector (*) to avoid main-thread lag */
+body {
+  font-family: "jakarta", sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 a.active hr {
   display: block;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 4px;
 }
 
-/* Hover */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888888;
+  border-radius: 10px;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
@@ -59,8 +77,8 @@ html {
 }
 
 @theme inline {
-  --font-sans: "PlusJakartaSans", sans-serif;
-  --font-heading: "PlusJakartaSans", sans-serif;
+  --font-sans: "jakarta", sans-serif;
+  --font-heading: "Play", serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -173,9 +191,5 @@ html {
 @layer base {
   * {
     @apply border-border outline-ring/50;
-  }
-
-  body {
-    @apply bg-background text-foreground;
   }
 }

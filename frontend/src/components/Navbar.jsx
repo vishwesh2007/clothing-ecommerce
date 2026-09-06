@@ -50,15 +50,11 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
 import Topsearchlist from "./Topsearchlist";
-
-//====================================================================================================================================
-//====================================================================================================================================
 
 function Navbar() {
   const navigate = useNavigate();
@@ -83,7 +79,6 @@ function Navbar() {
     product.name.toLowerCase().includes(search.toLowerCase()),
   );
 
-
   const filterddata = products.filter((product) =>
     product.name.toLowerCase().includes("shoes"),
   );
@@ -96,21 +91,26 @@ function Navbar() {
 
   return (
     <div
-      className={`sticky top-0 w-full z-50 py-3 sm:py-1 md:py-2 lg:py-1  bg-white flex px-2 sm:px-10 justify-between items-center ${searchShow ? "pointer-events-none" : "pointer-events-auto"}`}
+      className={`sticky top-0 w-full z-50 py-3 sm:py-1 md:py-2 lg:py-1 bg-white flex px-2 sm:px-10 justify-between items-center ${
+        searchShow ? "pointer-events-none" : "pointer-events-auto"
+      }`}
     >
-      <Link to="/" className="flex justify-center items-center gap-1">
+      <Link
+        to="/"
+        aria-label="Venanco Home"
+        className="flex justify-center items-center gap-1"
+      >
         <div className="sm:hidden flex">
-          <Drawer swipeDirection="left" className={""}>
-            <DrawerTrigger
-              render={
-                <Button
-                  variant="ghost"
-                  className="!h-10 !w-10 !p-0 [&_svg]:!size-[20px]"
-                >
-                  <TextAlignJustify color="black" />
-                </Button>
-              }
-            />
+          <Drawer swipeDirection="left">
+            <DrawerTrigger asChild>
+              <Button
+                variant="ghost"
+                aria-label="Open Menu"
+                className="!h-10 !w-10 !p-0 [&_svg]:!size-[20px]"
+              >
+                <TextAlignJustify color="black" />
+              </Button>
+            </DrawerTrigger>
             <DrawerContent className={"!rounded-none"}>
               <DrawerHeader
                 className={
@@ -121,29 +121,26 @@ function Navbar() {
                   <div className="items-center shrink-0 justify-center text-2xl rounded-full text-white bg-[#222222] flex w-15 h-15">
                     V
                   </div>
-                  <p className="">
+                  <div>
                     <h1 className="text-[20px] text-[#222222] font-medium">
                       Vishwesh
                     </h1>
                     <h3 className="text-[10px] text-[#666666]">Customer</h3>
-                  </p>
+                  </div>
                 </div>
-                <DrawerClose
-                  render={
-                    <Button variant="ghost" size="icon">
-                      {" "}
-                      <X />
-                    </Button>
-                  }
-                />
+                <DrawerClose asChild>
+                  <Button variant="ghost" size="icon" aria-label="Close Menu">
+                    <X />
+                  </Button>
+                </DrawerClose>
               </DrawerHeader>
               <div className="flex-1 overflow-scroll select-none customm-scrollbar bg-white px-2 text-[#525252]">
                 <div className="size-full">
                   <div className="flex flex-col gap-2">
                     <div>
-                      <h1 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
+                      <h2 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
                         Menu
-                      </h1>
+                      </h2>
 
                       <div className="flex flex-col text-[14px]">
                         <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
@@ -164,9 +161,9 @@ function Navbar() {
                     </div>
 
                     <div>
-                      <h1 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
+                      <h2 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
                         Shop
-                      </h1>
+                      </h2>
 
                       <div className="flex flex-col text-[14px]">
                         <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
@@ -201,9 +198,9 @@ function Navbar() {
                     </div>
 
                     <div>
-                      <h1 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
+                      <h2 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
                         Collections
-                      </h1>
+                      </h2>
 
                       <div className="flex flex-col text-[14px]">
                         <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
@@ -229,9 +226,9 @@ function Navbar() {
                     </div>
 
                     <div>
-                      <h1 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
+                      <h2 className="border-b border-[#E5E5E5] p-2 text-[16px] font-semibold text-[#444444]">
                         Account
-                      </h1>
+                      </h2>
 
                       <div className="flex flex-col text-[14px]">
                         <p className="flex cursor-pointer items-center gap-2 rounded-md p-2 transition hover:bg-[#fafafa] hover:text-[#222222]">
@@ -261,13 +258,24 @@ function Navbar() {
             </DrawerContent>
           </Drawer>
         </div>
-        <img src={assets.logo} className="w-40 sm:flex hidden" alt="" />
+        <img
+          src={assets.logo}
+          className="w-40 sm:flex hidden"
+          alt="Venanco Logo"
+        />
       </Link>
       <div className="ml-2">
         <NavigationMenu className={"max-[426px]:hidden flex"}>
           <NavigationMenuList>
             <NavigationMenuItem className={"hidden min-[1025px]:flex"}>
-              <NavigationMenuLink>Trending Now</NavigationMenuLink>
+              <NavigationMenuItem className={"hidden min-[1025px]:flex"}>
+                <Link
+                  to="/trending"
+                  className="cursor-pointer px-3 py-2 text-sm font-medium hover:bg-accent rounded-md"
+                >
+                  Trending Now
+                </Link>
+              </NavigationMenuItem>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className={"font-normal"}>
@@ -275,10 +283,10 @@ function Navbar() {
               </NavigationMenuTrigger>
               <NavigationMenuContent className="flex p-0 rounded-lg overflow-hidden">
                 <div className="flex flex-col w-60 h-100">
-                  <h2 className="p-[10px] text-[18px]">Top Searches</h2>
+                  <h3 className="p-[10px] text-[18px]">Top Searches</h3>
                   <Link
                     className="hover:bg-[#f5f5f5] text-[#555555] flex justify-between text-[10px] p-[10px] border-b-[0.5px] border-[#efefef]"
-                    to="/"
+                    to="/shirts"
                   >
                     Shirts
                     <TrendingUp color="#555555" size={15} />
@@ -286,7 +294,7 @@ function Navbar() {
 
                   <Link
                     className="text-[#555555] hover:bg-[#f5f5f5] flex justify-between text-[10px] p-[10px] border-b-[0.5px] border-[#efefef]"
-                    to="/"
+                    to="/t-shirts"
                   >
                     T-Shirts
                     <TrendingUp color="#555555" size={15} />
@@ -294,7 +302,7 @@ function Navbar() {
 
                   <Link
                     className="text-[#555555] hover:bg-[#f5f5f5] flex justify-between text-[10px] p-[10px] border-b-[0.5px] border-[#efefef]"
-                    to="/"
+                    to="/bottoms"
                   >
                     Bottoms
                     <TrendingUp color="#555555" size={15} />
@@ -302,24 +310,20 @@ function Navbar() {
 
                   <Link
                     className="text-[#555555] hover:bg-[#f5f5f5] flex justify-between text-[10px] p-[10px] border-b-[0.5px] border-[#efefef]"
-                    to="/"
+                    to="/arrivals"
                   >
                     View All
                   </Link>
                 </div>
 
                 <div className="bg-white flex flex-col items-center w-120 h-100 custom-scrollbar scroll-smooth overflow-y-scroll">
-                  <h2 className="flex pl-[15px] left-0  text-[18px] sticky top-0 z-10 w-[100%] bg-white py-[5px]">
+                  <h3 className="flex pl-[15px] left-0 text-[18px] sticky top-0 z-10 w-[100%] bg-white py-[5px]">
                     Trending Products
-                  </h2>
-                  <div className=" grid grid-cols-3 gap-1 ">
-                    {products
-                      .slice()
-                      .sort(() => Math.random() - 0.5)
-                      .slice(0, 6)
-                      .map((product) => (
-                        <Product product={product} key={product._id} />
-                      ))}
+                  </h3>
+                  <div className="grid grid-cols-3 gap-1">
+                    {products.slice(0, 6).map((product) => (
+                      <Product product={product} key={product._id} />
+                    ))}
                   </div>
                 </div>
               </NavigationMenuContent>
@@ -329,13 +333,9 @@ function Navbar() {
                 Foot Wear
               </NavigationMenuTrigger>
               <NavigationMenuContent className={"p-0"}>
-                {filterddata
-                  .slice()
-                  .sort(() => Math.random() - 0.5)
-                  .slice(0, 5)
-                  .map((product) => {
-                    return <ProductList product={product} key={product._id} />;
-                  })}
+                {filterddata.slice(0, 5).map((product) => {
+                  return <ProductList product={product} key={product._id} />;
+                })}
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem className={"min-[530px]:flex hidden"}>
@@ -353,21 +353,19 @@ function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem className={"hidden min-[769px]:flex"}>
-              <NavigationMenuTrigger className={"font-normal"} x>
+              <NavigationMenuTrigger className={"font-normal"}>
                 Bottoms
               </NavigationMenuTrigger>
               <NavigationMenuContent className={"p-0"}>
-                {bottomfilterddata
-                  .slice()
-                  .sort(() => Math.random() - 0.5)
-                  .slice(0, 5)
-                  .map((product) => {
-                    return <ProductList product={product} key={product._id} />;
-                  })}
+                {bottomfilterddata.slice(0, 5).map((product) => {
+                  return <ProductList product={product} key={product._id} />;
+                })}
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem className={"min-[530px]:flex hidden"}>
-              <NavigationMenuLink>Offer</NavigationMenuLink>
+              <NavigationMenuLink className="cursor-pointer px-3 py-2 text-sm font-medium">
+                Offer
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -375,19 +373,20 @@ function Navbar() {
 
       <div className="flex max-[426px]:justify-between justify-end gap-3 items-center w-90">
         <Drawer showSwipeHandle>
-          <DrawerTrigger
-            render={
-              <Button
-                variant="outline"
-                className={"w-45 border-none h-10 sm:w-30 sm:h-8 flex justify-start"}
-              >
-                <Search size={16} color="#555555" />{" "}
-                <p className="text-[14px] hover:text-[#222222] text-[#555555]">
-                  Search
-                </p>
-              </Button>
-            }
-          />
+          <DrawerTrigger asChild>
+            <Button
+              variant="outline"
+              aria-label="Open Search Bar"
+              className={
+                "w-45 border-none h-10 sm:w-30 sm:h-8 flex justify-start"
+              }
+            >
+              <Search size={16} color="#555555" />
+              <span className="text-[14px] hover:text-[#222222] text-[#555555]">
+                Search
+              </span>
+            </Button>
+          </DrawerTrigger>
           <DrawerContent className={"bg-white transform-none"}>
             <DrawerHeader
               className={"p-3 transform-none scale-100 opacity-100"}
@@ -405,9 +404,15 @@ function Navbar() {
                   />
                 </div>
                 <div>
-                  <DrawerClose
-                    render={<Button onClick={()=>close()} className={"w-20 h-10"}>Close</Button>}
-                  />
+                  <DrawerClose asChild>
+                    <Button
+                      onClick={() => close()}
+                      aria-label="Close Search"
+                      className={"w-20 h-10"}
+                    >
+                      Close
+                    </Button>
+                  </DrawerClose>
                 </div>
               </div>
               <div className="mt-3 pb-3 flex flex-col justify-start items-start gap-2 border-b-1 border-[#dadada]">
@@ -417,7 +422,6 @@ function Navbar() {
                     variant="secondary"
                     size="xs"
                     onClick={() => setSearch("Shirt")}
-                    name={"Shirt"}
                   >
                     Shirt
                   </Button>
@@ -425,7 +429,6 @@ function Navbar() {
                     variant="secondary"
                     size="xs"
                     onClick={() => setSearch("Pants")}
-                    name={"Pants"}
                   >
                     Pants
                   </Button>
@@ -433,7 +436,6 @@ function Navbar() {
                     variant="secondary"
                     size="xs"
                     onClick={() => setSearch("Jeans")}
-                    name={"Jeans"}
                   >
                     Jeans
                   </Button>
@@ -441,7 +443,6 @@ function Navbar() {
                     variant="secondary"
                     size="xs"
                     onClick={() => setSearch("Shoes")}
-                    name={"Shoes"}
                   >
                     Shoes
                   </Button>
@@ -451,7 +452,7 @@ function Navbar() {
             <div className="p-3 h-fit pt-0">
               <div className="w-full">
                 {search ? (
-                  <div className="w-full custom-scrollbar h-100  grid grid-cols-3 max-[1025px]:grid-cols-2 max-[769px]:grid-cols-2 max-[426px]:grid-cols-1 gap-1 overflow-y-scroll">
+                  <div className="w-full custom-scrollbar h-100 grid grid-cols-3 max-[1025px]:grid-cols-2 max-[769px]:grid-cols-2 max-[426px]:grid-cols-1 gap-1 overflow-y-scroll">
                     {filterData.slice(0, 6).map((product, index) => (
                       <Topsearchlist
                         key={`${product._id}-${index}`}
@@ -474,16 +475,24 @@ function Navbar() {
           </DrawerContent>
         </Drawer>
         <div className="flex gap-0 md:gap-2">
-          <Button className={"w-8 h-8"} variant="ghost">
+          <Button aria-label="View Cart" className={"w-8 h-8"} variant="ghost">
             <ShoppingBag size={16} color="#555555" />
           </Button>
-          <Button className={"w-8 h-8 hidden sm:flex"} variant="ghost">
+          <Button
+            aria-label="View Wishlist"
+            className={"w-8 h-8 hidden sm:flex"}
+            variant="ghost"
+          >
             <Heart size={16} color="#555555" />
           </Button>
           {login ? (
             <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Button className={"w-8 h-8"} variant="ghost">
+              <DropdownMenuTrigger asChild>
+                <Button
+                  aria-label="User Menu"
+                  className={"w-8 h-8"}
+                  variant="ghost"
+                >
                   <CircleUserRound size={30} color="#555555" />
                 </Button>
               </DropdownMenuTrigger>
@@ -499,28 +508,28 @@ function Navbar() {
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={() => navigate("/cart")}>
-                    <p className="text-[12px]">Profile</p>{" "}
+                    <span className="text-[12px]">Profile</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate("/order")}>
-                    <p className="text-[12px]">Orders</p>{" "}
+                    <span className="text-[12px]">Orders</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate("/whishlist")}>
-                    <p className="text-[12px]">Wishlist</p>{" "}
+                    <span className="text-[12px]">Wishlist</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate("/")}>
-                    <p className="text-[12px]">Cart</p>{" "}
+                    <span className="text-[12px]">Cart</span>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem onClick={() => navigate("/")}>
-                    <p className="text-[12px]">Settings</p>
+                    <span className="text-[12px]">Settings</span>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
-                    <p className="text-[12px]">Logout</p>
+                    <span className="text-[12px]">Logout</span>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
