@@ -24,7 +24,7 @@ import {
   Zap,
 } from "lucide-react";
 import Product from "./Product";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ShopContext } from "../context/Products";
 import ProductList from "./ProductList";
 import { Button } from "@/components/ui/button";
@@ -102,14 +102,11 @@ function Navbar() {
       >
         <div className="sm:hidden flex">
           <Drawer swipeDirection="left">
-            <DrawerTrigger asChild>
-              <Button
-                variant="ghost"
-                aria-label="Open Menu"
-                className="!h-10 !w-10 !p-0 [&_svg]:!size-[20px]"
-              >
-                <TextAlignJustify color="black" />
-              </Button>
+            <DrawerTrigger asChild={false}>
+              <div className="w-45 border h-10 sm:w-30 sm:h-8 flex items-center gap-2 px-3 rounded-lg cursor-pointer bg-white hover:bg-accent">
+                <Search size={16} color="#555555" />
+                <span className="text-[14px] text-[#555555]">Search</span>
+              </div>
             </DrawerTrigger>
             <DrawerContent className={"!rounded-none"}>
               <DrawerHeader
@@ -268,14 +265,12 @@ function Navbar() {
         <NavigationMenu className={"max-[426px]:hidden flex"}>
           <NavigationMenuList>
             <NavigationMenuItem className={"hidden min-[1025px]:flex"}>
-              <NavigationMenuItem className={"hidden min-[1025px]:flex"}>
-                <Link
-                  to="/trending"
-                  className="cursor-pointer px-3 py-2 text-sm font-medium hover:bg-accent rounded-md"
-                >
-                  Trending Now
-                </Link>
-              </NavigationMenuItem>
+              <Link
+                to="/trending"
+                className="cursor-pointer px-3 py-2 text-sm font-medium hover:bg-accent rounded-md"
+              >
+                Trending Now
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className={"font-normal"}>
@@ -345,7 +340,6 @@ function Navbar() {
               <NavigationMenuContent className={"p-0"}>
                 {shirtfilterddata
                   .slice()
-                  .sort(() => Math.random() - 0.5)
                   .slice(0, 5)
                   .map((product) => {
                     return <ProductList product={product} key={product._id} />;

@@ -4,15 +4,56 @@ const getImg = (imageName, width = 500) => {
 import logo from "./logo.svg";
 import logo2 from "./logo1.svg";
 
-export const category = [
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_1",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_2",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category2",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_4",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_5",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_6",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category1",
-  "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category",
+
+export const categoryItems = [
+  {
+    id: "cat_belts",
+    label: "Belts",
+    image:
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_1",
+  },
+  {
+    id: "cat_party",
+    label: "Party Wear",
+    image:
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_2",
+  },
+  {
+    id: "cat_bags",
+    label: "Bags",
+    image:
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category2",
+  },
+  {
+    id: "cat_office",
+    label: "Office Wear",
+    image:
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_4",
+  },
+  {
+    id: "cat_sunglasses",
+    label: "Sunglasses",
+    image:
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_5",
+  },
+  {
+    id: "cat_bottoms",
+    label: "Trending Bottoms",
+    image:
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category_6",
+  },
+  {
+    id: "cat_casual",
+    label: "Casual Wears",
+    image:
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category1",
+  },
+  {
+    id: "cat_oversized",
+    label: "Oversized T-Shirt",
+    image:
+      "https://res.cloudinary.com/wp6a9yvf/image/upload/w_200,c_limit,q_auto,f_auto/category",
+  },
 ];
 
 export const categorysec = [
@@ -62,7 +103,8 @@ export const smallBanners = [
 ];
 
 export const assets = {
-  logo,logo2
+  logo,
+  logo2,
 };
 
 export const products = [

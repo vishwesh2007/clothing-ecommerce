@@ -1,7 +1,7 @@
 import React from "react";
 import {
   bannerImages,
-  category,
+  categoryItems,
   smallBanners,
 } from "./../assets/frontend_assets/assets";
 import {
@@ -29,20 +29,21 @@ function Home() {
             }),
           ]}
         >
-          <CarouselContent className={"cursor-pointer "}>
-            {bannerImages
-              .sort(() => Math.random() - 0.5)
-              .slice(0, 3)
-              .map((banner, index) => (
-                <CarouselItem key={index}>
-                  <img
-                    src={banner}
-                    alt={`Banner ${index + 1}`}
-                    className="w-full"
-                    skeletonClassName="rounded-none"
-                  />
-                </CarouselItem>
-              ))}
+          <CarouselContent className={"cursor-pointer"}>
+            {bannerImages.slice(0, 3).map((banner, index) => (
+              <CarouselItem key={index}>
+                <img
+                  src={banner}
+                  alt={`Banner ${index + 1}`}
+                  width="1350"
+                  height="461"
+                  fetchPriority="high"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  className="w-full h-auto object-cover"
+                />
+              </CarouselItem>
+            ))}
           </CarouselContent>
         </Carousel>
       </div>
@@ -54,98 +55,46 @@ function Home() {
             }),
           ]}
         >
-          <CarouselContent className={"cursor-pointer "}>
-            {smallBanners
-              .sort(() => Math.random() - 0.5)
-              .slice(0, 3)
-              .map((banner, index) => (
-                <CarouselItem key={index}>
-                  <ImageLoader
-                    src={banner}
-                    alt={`Banner ${index + 1}`}
-                    className="w-full "
-                    skeletonClassName="rounded-none"
-                  />
-                </CarouselItem>
-              ))}
+          <CarouselContent className={"cursor-pointer"}>
+            {smallBanners.slice(0, 3).map((banner, index) => (
+              <CarouselItem key={index}>
+                <ImageLoader
+                  src={banner}
+                  alt={`Small Banner ${index + 1}`}
+                  width="412"
+                  height="530"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  className="w-full h-auto object-cover"
+                  skeletonClassName="rounded-none"
+                />
+              </CarouselItem>
+            ))}
           </CarouselContent>
         </Carousel>
       </div>
       <Services />
-      <div className=" justify-center flex items-center p-2 ">
+      <div className="justify-center flex items-center p-2">
         <div className="flex justify-start items-center gap-8 h-40 customm-scrollbar bg-white overflow-x-scroll min-[1024px]:overflow-hidden">
-          <div
-            className="gap-3 flex flex-col justify-center items-center"
-            onClick={() => navigate("/")}
-          >
-            <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-              <img src={category[0]} alt="Belts" />
+          {categoryItems.map((item) => (
+            <div
+              key={item.id}
+              className="gap-3 flex flex-col justify-center items-center shrink-0 cursor-pointer"
+              onClick={() => navigate("/")}
+            >
+              <div className="w-[80px] h-[80px] rounded-full overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="text-[10px] text-[#666666]">{item.label}</p>
             </div>
-            <p className="text-[10px] text-[#666666]">Belts</p>
-          </div>
-          <div
-            className="gap-3 flex flex-col justify-center items-center"
-            onClick={() => navigate("/")}
-          >
-            <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-              <img src={category[1]} alt="Party Wear" />
-            </div>
-            <p className="text-[10px] text-[#666666]">Party Wear</p>
-          </div>
-          <div
-            className="gap-3 flex flex-col justify-center items-center"
-            onClick={() => navigate("/")}
-          >
-            <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-              <img src={category[2]} alt="Bags" />
-            </div>
-            <p className="text-[10px] text-[#666666]">Bags</p>
-          </div>
-          <div
-            className="gap-3 flex flex-col justify-center items-center"
-            onClick={() => navigate("/")}
-          >
-            <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-              <img src={category[3]} alt="Office Wear" />
-            </div>
-            <p className="text-[10px] text-[#666666]">Office Wear</p>
-          </div>
-          <div
-            className="gap-3 flex flex-col justify-center items-center"
-            onClick={() => navigate("/")}
-          >
-            <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-              <img src={category[4]} alt="Sunglasses" />
-            </div>
-            <p className="text-[10px] text-[#666666]">Sunglasses</p>
-          </div>
-          <div
-            className="gap-3 flex flex-col justify-center items-center"
-            onClick={() => navigate("/")}
-          >
-            <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-              <img src={category[5]} alt="Trending Bottoms" />
-            </div>
-            <p className="text-[10px] text-[#666666]">Trending Bottoms</p>
-          </div>
-          <div
-            className="gap-3 flex flex-col justify-center items-center"
-            onClick={() => navigate("/")}
-          >
-            <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-              <img src={category[6]} alt="Casual Wears" />
-            </div>
-            <p className="text-[10px] text-[#666666]">Casual Wears</p>
-          </div>
-          <div
-            className="gap-3 flex flex-col justify-center items-center"
-            onClick={() => navigate("/")}
-          >
-            <div className="w-[80px] overflow-hidden h-[80px] rounded-[100%] overflow-hidden">
-              <img src={category[7]} alt="Oversized T-Shirt" />
-            </div>
-            <p className="text-[10px] text-[#666666]">Oversized T-Shirt</p>
-          </div>
+          ))}
         </div>
       </div>
       <Title text1={"POPULAR CATEGORIES"} />
