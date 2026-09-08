@@ -345,7 +345,8 @@ function Navbar() {
               </NavigationMenuTrigger>
               <NavigationMenuContent className={"p-0"}>
                 {shirtfilterddata
-                  .slice()
+                  .slice().
+                  sort(()=>Math.random()-0.5)
                   .slice(0, 5)
                   .map((product) => {
                     return <ProductList product={product} key={product._id} />;
