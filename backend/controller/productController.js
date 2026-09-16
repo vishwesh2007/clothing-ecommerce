@@ -1,0 +1,1 @@
+createProduct() ← Admin getProducts() getProductById() updateProduct() ← Admin deleteProduct() ← Admin

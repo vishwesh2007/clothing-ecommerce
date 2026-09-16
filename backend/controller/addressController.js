@@ -1,0 +1,1 @@
+getAddresses() addAddress() updateAddress() deleteAddress() setDefaultAddress()

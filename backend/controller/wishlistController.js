@@ -1,0 +1,1 @@
+getWishlist() addToWishlist() removeFromWishlist()
