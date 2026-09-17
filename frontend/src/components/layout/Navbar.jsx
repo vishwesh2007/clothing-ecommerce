@@ -43,6 +43,9 @@ function Navbar() {
         <Link to="/contact" className="hover:text-primary transition-colors">
           Contact
         </Link>
+        <Link to="/profile" className="hover:text-primary transition-colors">
+          Profile
+        </Link>
       </nav>
 
       {!isLogin ? (
@@ -55,7 +58,9 @@ function Navbar() {
           </Link>
         </div>
       ) : (
-        <Button variant="secondary" onClick={handleLogout}>Logout</Button>
+        <Button variant="secondary" onClick={handleLogout}>
+          Logout
+        </Button>
       )}
     </header>
   );
