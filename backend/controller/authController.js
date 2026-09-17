@@ -27,12 +27,12 @@ export const register = async (req, res) => {
     return res.status(201).json({
       message: "Successfully Registered",
       success: true,
+      token,
       data: {
         id: newUser._id,
         name: newUser.name,
         email: newUser.email,
         role: newUser.role,
-        token,
       },
     });
   } catch (error) {
@@ -66,12 +66,12 @@ export const login = async (req, res) => {
     return res.status(200).json({
       message: "Login successful",
       success: true,
+      token,
       data: {
         name: user.name,
         id: user._id,
         email: user.email,
         role: user.role,
-        token,
       },
     });
   } catch (error) {

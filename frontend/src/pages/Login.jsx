@@ -1,8 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
 import api from "@/services/api.js";
-import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 function Login() {
   const navigate = useNavigate();
@@ -20,11 +20,16 @@ function Login() {
       });
       console.log("Login Successfully:", response.data);
       toast.success("Login Successfully");
-
-      if (response.data.token) {
+      const token = response.data.token || response.data.data?.token;
+      const userData = response.data.data || response.data;
+      if (token) {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", JSON.stringify(userData));
+        console.log("token available");
+        navigate("/profile");
+      } else {
+        toast.error("token not available");
       }
-      navigate("/profile");
     } catch (err) {
       console.log("Login Error:", err);
       const error = err.response?.data?.message;

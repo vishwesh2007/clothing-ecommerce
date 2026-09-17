@@ -21,10 +21,14 @@ function Register() {
         password,
       });
       console.log("Registration Successfully:", response.data);
-        toast.success("Registration Successfully");
-        
-      if (response.data.token) {
-        localStorage.setItem("token", response.data.token);
+      toast.success("Registration Successfully");
+
+      const token = response.data.token || response.data.data?.token;
+      if (token) {
+        localStorage.setItem("token", token);
+        console.log("token available");
+      } else {
+        toast.error("token not available", response.data);
       }
       navigate("/profile");
     } catch (err) {
@@ -55,7 +59,6 @@ function Register() {
             type="text"
             id="name"
             placeholder="Enter full name"
-            
           />
 
           <label className="text-d-label mt-4" htmlFor="email">
@@ -67,7 +70,6 @@ function Register() {
             type="email"
             id="email"
             placeholder="Enter email"
-            
           />
 
           <label className="text-d-label mt-4" htmlFor="password">
@@ -79,7 +81,6 @@ function Register() {
             type="password"
             id="password"
             placeholder="Enter password"
-            
           />
 
           <button

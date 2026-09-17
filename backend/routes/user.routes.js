@@ -1,14 +1,15 @@
-const express = require("express");
-const router = express.Router();
-const authMiddleware = require("../Middleware/authMiddleware.js");
-const {
+import express from "express";
+import authMiddleware from "../Middleware/authMiddleware.js";
+import {
   getProfile,
   updateProfile,
   deleteAccount,
-} = require("../controllers/userController");
+} from "../controller/userController.js";
+
+const router = express.Router();
 
 router.get("/profile", authMiddleware, getProfile);
 router.put("/profile", authMiddleware, updateProfile);
 router.delete("/profile", authMiddleware, deleteAccount);
 
-module.exports = router;
+export default router;
