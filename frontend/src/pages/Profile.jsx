@@ -11,7 +11,6 @@ function Profile() {
     const fetchProfile = async () => {
       try {
         const response = await api.get("/user/profile");
-        console.log("dekhle",response.data.data);
         if (response) {
           setUser(response.data.data)
         }
@@ -22,13 +21,18 @@ function Profile() {
     fetchProfile();
   }, [navigate]);
 
-  return <div>
-    {user ? <div>{user.name}
-      <p>{user.role}</p>
-      
+  return (
+    <div className="px-20 py-4">
+      {user ? (
+        <div>
+          {user.name}
+          <p>{user.role}</p>
+        </div>
+      ) : (
+        <p>not found</p>
+      )}
     </div>
-  
-    : <p>not found</p>}</div>;
+  );
 }
 
 export default Profile;

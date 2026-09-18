@@ -1,67 +1,116 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import ProfileMenu from "../common/ProfileMenu";
+import { Heart, ShoppingBag } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import SearchBar from "../common/SearchBar";
 
 function Navbar() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [isLogin, setLogin] = useState(false);
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setLogin(true);
-    } else
-    {
-      setLogin(false);
-    }
-  }, [location]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setLogin(false);
-    navigate("/");
-  };
-
   return (
-    <header className="flex justify-between items-center py-4 px-20 bg-white text-[#1a1a1a] border-b border-[#eaeaea]">
-      <div>
-        <Link to="/" className="text-xl font-bold tracking-tight">
-          logo
+    <header className="flex items-center justify-between border-b border-[#E7E3DC] bg-white px-20 py-4 text-ink">
+      <div className="flex items-center gap-30 text-ink-soft">
+        <Link to="/" className="text-xl font-bold text-ink">
+          VENANCO
         </Link>
+
+        <nav className="flex items-center justify-center gap-7 font-medium text-d-nav-links">
+          <Link to="/men" className="transition-colors hover:text-primary">
+            Men
+          </Link>
+
+          <Link to="/women" className="transition-colors hover:text-primary">
+            Women
+          </Link>
+
+          <Link to="/kids" className="transition-colors hover:text-primary">
+            Kids
+          </Link>
+
+          <Link
+            to="/new-arrivals"
+            className="transition-colors hover:text-primary"
+          >
+            New Arrivals
+          </Link>
+
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="h-auto px-0 py-0 font-medium !bg-transparent">
+                  Sale
+                </NavigationMenuTrigger>
+
+                <NavigationMenuContent>
+                  <div className="grid w-[180px] gap-1 p-2">
+                    <NavigationMenuLink asChild>
+                      <Link
+                        to="/sale/men"
+                        className="rounded-md px-2 py-1.5 hover:bg-accent"
+                      >
+                        Men's Sale
+                      </Link>
+                    </NavigationMenuLink>
+
+                    <NavigationMenuLink asChild>
+                      <Link
+                        to="/sale/women"
+                        className="rounded-md px-2 py-1.5 hover:bg-accent"
+                      >
+                        Women's Sale
+                      </Link>
+                    </NavigationMenuLink>
+
+                    <NavigationMenuLink asChild>
+                      <Link
+                        to="/sale/kids"
+                        className="rounded-md px-2 py-1.5 hover:bg-accent"
+                      >
+                        Kids' Sale
+                      </Link>
+                    </NavigationMenuLink>
+
+                    <NavigationMenuLink asChild>
+                      <Link
+                        to="/sale"
+                        className="rounded-md px-2 py-1.5 hover:bg-accent"
+                      >
+                        All Sale
+                      </Link>
+                    </NavigationMenuLink>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </nav>
       </div>
 
-      <nav className="flex justify-center items-center gap-10 font-medium">
-        <Link to="/" className="hover:text-primary transition-colors">
-          Home
-        </Link>
-        <Link to="/shop" className="hover:text-primary transition-colors">
-          Shop
-        </Link>
-        <Link to="/about" className="hover:text-primary transition-colors">
-          About
-        </Link>
-        <Link to="/contact" className="hover:text-primary transition-colors">
-          Contact
-        </Link>
-        <Link to="/profile" className="hover:text-primary transition-colors">
-          Profile
-        </Link>
-      </nav>
+      <div className="flex items-center gap-2">
+        <SearchBar />
 
-      {!isLogin ? (
-        <div className="flex justify-center items-center gap-3">
-          <Link to="/login">
-            <Button variant="ghost">Login</Button>
-          </Link>
-          <Link to="/register">
-            <Button>Sign Up</Button>
-          </Link>
-        </div>
-      ) : (
-        <Button variant="secondary" onClick={handleLogout}>
-          Logout
+        <Button variant="ghost" size="icon" className="rounded-full w-10 h-10 relative">
+          <ShoppingBag className="h-1 w-1" />
+          <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-black px-1 text-[10px] text-white">
+            3
+          </span>
         </Button>
-      )}
+
+        <Button variant="ghost" size="icon" className="rounded-full w-10 h-10 relative">
+          <Heart className="h-1 w-1" />
+          <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-black px-1 text-[10px] text-white">
+            2
+          </span>
+        </Button>
+
+        <ProfileMenu />
+      </div>
     </header>
   );
 }

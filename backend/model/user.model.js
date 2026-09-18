@@ -32,6 +32,15 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    gender: {
+      type: String,
+      enum: ["Male", "Female","Other"],
+      default: ""
+    },
+    mobile: {
+      type: Number,
+      default:""
+    },
     resetPasswordToken: { type: String },
     resetPasswordExpires: { type: Date },
   },

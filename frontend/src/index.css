@@ -14,6 +14,24 @@
 
 /* 2. Custom Typography Tokens for Responsive Layouts */
 @theme {
+  --color-bg: #FAFAF7;
+  --color-paper: #FFFFFF;
+  --color-ink: #1B1A18;
+  --color-ink-soft: #6E6B65;
+  --color-ink-faint: #9A9690;
+  --color-border: #E7E3DC;
+  --color-border-soft: #F0EDE7;
+  --color-danger: #A5433A;
+  --color-danger-bg: #FBF3F2;
+  --color-delivered: #3E6B4F;
+  --color-delivered-bg: #E7F0E9;
+  --color-processing: #A17A2E;
+
+  --radius-s: 8px;
+  --radius-m: 10px;
+  --radius-l: 12px;
+
+  --shadow-card: 0 1px 2px rgba(20, 18, 14, 0.04), 0 8px 24px -12px rgba(20, 18, 14, 0.08);
   --text-saas-root: 16px;
 
   --text-d-nav-logo: 18px;
@@ -261,5 +279,127 @@
 
   html {
     @apply font-sans;
+  }
+}
+
+
+
+
+
+/* ============================================================
+   COMPONENT CLASSES — buttons, cards, badges
+   ============================================================ */
+@layer components {
+
+  /* Cards */
+  .card {
+    background-color: var(--color-paper);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-card);
+  }
+
+  .tile {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-m);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .btn-dark {
+    background-color: var(--color-ink);
+    color: #FFFFFF;
+    border-color: var(--color-ink);
+  }
+
+  .btn-dark:hover {
+    background-color: #000000;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: var(--color-ink);
+    border-color: var(--color-border);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--color-ink);
+  }
+
+  .btn-text {
+    font-weight: 600;
+    color: var(--color-ink);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2px;
+  }
+
+  .btn-text:hover {
+    border-color: var(--color-ink);
+  }
+
+  .btn-logout {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-danger);
+    font-weight: 600;
+    border-radius: 9999px;
+  }
+
+  .btn-logout:hover {
+    border-color: var(--color-danger);
+    background-color: var(--color-danger-bg);
+  }
+
+  /* Badges */
+  .badge-default {
+    font-weight: 700;
+    color: var(--color-delivered);
+    background-color: var(--color-delivered-bg);
+    border-radius: 9999px;
+    padding: 3px 10px;
+  }
+
+  /* Stat boxes (Orders section) */
+  .stat-box {
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-m);
+    background-color: var(--color-bg);
+  }
+
+  .stat-box .stat-num {
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .stat-box .stat-label {
+    color: var(--color-ink-soft);
+    font-weight: 500;
+  }
+
+  .stat-box.total .stat-num {
+    color: var(--color-ink);
+  }
+
+  .stat-box.delivered .stat-num {
+    color: var(--color-delivered);
+  }
+
+  .stat-box.processing .stat-num {
+    color: var(--color-processing);
+  }
+
+  .stat-box.cancelled .stat-num {
+    color: var(--color-danger);
   }
 }
