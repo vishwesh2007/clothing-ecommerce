@@ -1,4 +1,4 @@
-import { mongoose } from "mongoose";
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
@@ -34,12 +34,12 @@ const userSchema = new mongoose.Schema(
     },
     gender: {
       type: String,
-      enum: ["Male", "Female","Other"],
-      default: ""
+      enum: ["Male", "Female", "Other", ""],
+      default: "",
     },
     mobile: {
-      type: Number,
-      default:""
+      type: String,
+      default: "",
     },
     resetPasswordToken: { type: String },
     resetPasswordExpires: { type: Date },
