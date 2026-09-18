@@ -286,120 +286,18 @@
 
 
 
-/* ============================================================
-   COMPONENT CLASSES — buttons, cards, badges
-   ============================================================ */
-@layer components {
 
-  /* Cards */
-  .card {
-    background-color: var(--color-paper);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-l);
-    box-shadow: var(--shadow-card);
+
+@keyframes loader {
+  0% {
+    transform: translateX(-100%);
   }
 
-  .tile {
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-border-soft);
-    border-radius: var(--radius-m);
+  50% {
+    transform: translateX(100%);
   }
 
-  /* Buttons */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    border-radius: 9999px;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-  }
-
-  .btn-dark {
-    background-color: var(--color-ink);
-    color: #FFFFFF;
-    border-color: var(--color-ink);
-  }
-
-  .btn-dark:hover {
-    background-color: #000000;
-  }
-
-  .btn-outline {
-    background-color: transparent;
-    color: var(--color-ink);
-    border-color: var(--color-border);
-  }
-
-  .btn-outline:hover {
-    border-color: var(--color-ink);
-  }
-
-  .btn-text {
-    font-weight: 600;
-    color: var(--color-ink);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 2px;
-  }
-
-  .btn-text:hover {
-    border-color: var(--color-ink);
-  }
-
-  .btn-logout {
-    background-color: transparent;
-    border: 1px solid var(--color-border);
-    color: var(--color-danger);
-    font-weight: 600;
-    border-radius: 9999px;
-  }
-
-  .btn-logout:hover {
-    border-color: var(--color-danger);
-    background-color: var(--color-danger-bg);
-  }
-
-  /* Badges */
-  .badge-default {
-    font-weight: 700;
-    color: var(--color-delivered);
-    background-color: var(--color-delivered-bg);
-    border-radius: 9999px;
-    padding: 3px 10px;
-  }
-
-  /* Stat boxes (Orders section) */
-  .stat-box {
-    border: 1px solid var(--color-border-soft);
-    border-radius: var(--radius-m);
-    background-color: var(--color-bg);
-  }
-
-  .stat-box .stat-num {
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  .stat-box .stat-label {
-    color: var(--color-ink-soft);
-    font-weight: 500;
-  }
-
-  .stat-box.total .stat-num {
-    color: var(--color-ink);
-  }
-
-  .stat-box.delivered .stat-num {
-    color: var(--color-delivered);
-  }
-
-  .stat-box.processing .stat-num {
-    color: var(--color-processing);
-  }
-
-  .stat-box.cancelled .stat-num {
-    color: var(--color-danger);
+  100% {
+    transform: translateX(200%);
   }
 }

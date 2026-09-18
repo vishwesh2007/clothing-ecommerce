@@ -21,19 +21,33 @@ export const getProfile = async (req, res) => {
 };
 export const updateProfile = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select("-password");
-    if (!user) {
-      return res.status(404).json({
-        message: "User not found",
-      });
+    const userId = req.user.id;
+    const { name, gender, mobile,address } = req.body;
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      {
+        name,
+        gender,
+        mobile,
+        address,
+      },
+      { new: true, runValidators: true },
+    ).select("-password");
+    if (!updatedUser) {
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
     }
     res.status(200).json({
       success: true,
-      data: user,
+      message: "Profile updated successfully",
+      data: updatedUser,
     });
   } catch (error) {
-    console.error("Profile Fetch Error:", error);
-    res.status(500).json({ message: "Server Error" });
+    console.error("Update profile error:", error);
+    res
+      .status(500)
+      .json({ success: false, message: "Server error", error: error.message });
   }
 };
 export const deleteAccount = async (req, res) => {

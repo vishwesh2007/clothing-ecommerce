@@ -43,12 +43,12 @@ function Navbar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-auto px-0 py-0 font-medium !bg-transparent">
+                <NavigationMenuTrigger className="h-auto px-0 py-0 font-medium bg-transparent!">
                   Sale
                 </NavigationMenuTrigger>
 
                 <NavigationMenuContent>
-                  <div className="grid w-[180px] gap-1 p-2">
+                  <div className="grid w-45 gap-1 p-2">
                     <NavigationMenuLink asChild>
                       <Link
                         to="/sale/men"
@@ -95,16 +95,24 @@ function Navbar() {
       <div className="flex items-center gap-2">
         <SearchBar />
 
-        <Button variant="ghost" size="icon" className="rounded-full w-10 h-10 relative">
-          <ShoppingBag className="h-1 w-1" />
-          <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-black px-1 text-[10px] text-white">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="relative h-10 w-10 cursor-pointer rounded-full"
+        >
+          <ShoppingBag className="h-4 w-4" />
+          <span className="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-black px-1 text-[10px] text-white">
             3
           </span>
         </Button>
 
-        <Button variant="ghost" size="icon" className="rounded-full w-10 h-10 relative">
-          <Heart className="h-1 w-1" />
-          <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-black px-1 text-[10px] text-white">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="relative h-10 w-10 cursor-pointer rounded-full"
+        >
+          <Heart className="h-4 w-4" />
+          <span className="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-black px-1 text-[10px] text-white">
             2
           </span>
         </Button>
@@ -116,3 +124,4 @@ function Navbar() {
 }
 
 export default Navbar;
+  

@@ -26,7 +26,7 @@ export default function SearchBar() {
         <Search className="h-5 w-5" />
       </SheetTrigger>
 
-      <SheetContent side="right" className="w-[320px] sm:w-[400px]">
+      <SheetContent side="right" className="w-[320px] sm:w-100">
         <SheetHeader>
           <SheetTitle>Search Products</SheetTitle>
           <SheetDescription>Find your favorite products</SheetDescription>
