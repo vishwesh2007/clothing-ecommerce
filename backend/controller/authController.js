@@ -6,7 +6,7 @@ import sendEmail from "../utils/sendEmail.js";
 
 export const register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password, role,gender,mobile } = req.body;
     if (!name || !email || !password) {
       return res.status(400).json({ message: "All fields are required" });
     }
