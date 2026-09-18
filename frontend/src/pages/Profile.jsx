@@ -5,6 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import Loader from "../components/common/Loader";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 function Profile() {
   const [user, setUser] = useState(null);
@@ -197,17 +204,27 @@ function Profile() {
             <div className="flex flex-col w-50 gap-1 h-12">
               <label className="text-xs font-light text-ink-soft">Gender</label>
               {edit ? (
-                <select
-                  name="gender"
+                <Select
                   value={formdata.gender}
-                  onChange={handleChange}
-                  className="border-b border-[#E7E3DC] bg-white px-2 py-1 text-sm capitalize outline-none"
+                  onValueChange={(value) =>
+                    handleChange({
+                      target: {
+                        name: "gender",
+                        value,
+                      },
+                    })
+                  }
                 >
-                  <option value="">Select Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
-                </select>
+                  <SelectTrigger className="w-50 rounded-none border-0 border-b border-[#E7E3DC] px-2 py-1 text-sm capitalize shadow-none focus:ring-0 focus:border-ink">
+                    <SelectValue placeholder="Select Gender" />
+                  </SelectTrigger>
+
+                  <SelectContent>
+                    <SelectItem className={"px-3"} value="male">Male</SelectItem>
+                    <SelectItem className={"px-3"} value="female">Female</SelectItem>
+                    <SelectItem className={"px-3"} value="other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
               ) : (
                 <p className="text-sm capitalize text-ink">
                   {user.gender || "Not specified"}
