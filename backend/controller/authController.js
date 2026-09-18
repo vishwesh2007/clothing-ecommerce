@@ -20,6 +20,7 @@ export const register = async (req, res) => {
       email,
       password: hashedPassword,
       role,
+      gender,mobile
     });
     await newUser.save();
     const token = generateToken(newUser._id);
