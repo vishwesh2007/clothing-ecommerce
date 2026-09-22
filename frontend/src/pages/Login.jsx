@@ -22,11 +22,17 @@ function Login() {
       toast.success("Login Successfully");
       const token = response.data.token || response.data.data?.token;
       const userData = response.data.data || response.data;
+      const userRole = userData?.role;
       if (token) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("user", JSON.stringify(userData));
+        localStorage.setItem("userRole", userRole);
         console.log("token available");
-        navigate("/profile");
+        if (userRole === "admin") {
+          navigate("/admin/dashboard");
+        } else {
+          navigate("/");
+        }
       } else {
         toast.error("token not available");
       }

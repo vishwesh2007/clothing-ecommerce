@@ -14,7 +14,6 @@ const authMiddleware = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // User ko database se nikal kar req.user mein attach kar diya
     req.user = await User.findById(decoded.id || decoded).select("-password");
 
     if (!req.user) {

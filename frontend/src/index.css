@@ -301,3 +301,23 @@
     transform: translateX(200%);
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fafaf7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 9999px;
+  border: 1px solid #fafaf7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1b1a18;
+}

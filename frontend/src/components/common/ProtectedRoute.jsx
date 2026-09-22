@@ -1,8 +1,8 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { toast } from "sonner";
 
-function ProtectedRoute({ children }) {
+function ProtectedRoute() {
   const token = localStorage.getItem("token");
 
   if (!token) {
@@ -10,7 +10,7 @@ function ProtectedRoute({ children }) {
     return <Navigate to="/login" replace />;
   }
 
-  return children;
+  return <Outlet/>;
 }
 
 export default ProtectedRoute;

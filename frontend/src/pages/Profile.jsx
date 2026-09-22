@@ -262,7 +262,7 @@ function Profile() {
         </div>
 
         <div className="flex flex-col rounded-[var(--radius-s)] gap-8 p-8 bg-white border border-[#E7E3DC] w-full">
-          <h2 className="text-d-h3">My Orders</h2>
+          <h2 className="text-d-h3 font-medium">My Orders</h2>
           <div className="grid-cols-2 grid gap-4">
             <OrderBlock title="Total Orders" orderNum="12" />
             <OrderBlock title="Delivered" orderNum="9" />

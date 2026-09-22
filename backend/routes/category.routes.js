@@ -1,16 +1,14 @@
 import express from "express";
 import authMiddleware from "../middleware/authMiddleware.js";
 import adminMiddleware from "../middleware/adminMiddleware.js";
-
 import {
-  createProduct,
-  displayProducts,
-} from "../controller/productController.js";
+  createCategory,
+  displayCategories,
+} from "../controller/categoryController.js";
 
 const router = express.Router();
 
-router.post("/create", authMiddleware, adminMiddleware, createProduct);
-
-router.get("/", displayProducts);
+router.post("/create", authMiddleware, adminMiddleware, createCategory);
+router.get("/", displayCategories);
 
 export default router;

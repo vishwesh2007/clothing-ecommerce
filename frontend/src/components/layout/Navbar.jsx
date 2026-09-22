@@ -13,8 +13,10 @@ import {
 import SearchBar from "../common/SearchBar";
 
 function Navbar() {
+  const token = localStorage.getItem("token");
+
   return (
-    <header className="flex items-center justify-between border-b border-[#E7E3DC] bg-white px-20 py-4 text-ink">
+    <header className="flex top-0 sticky z-50 items-center justify-between border-b border-[#E7E3DC] bg-white px-20 py-4 text-ink">
       <div className="flex items-center gap-30 text-ink-soft">
         <Link to="/" className="text-xl font-bold text-ink">
           VENANCO
@@ -98,7 +100,7 @@ function Navbar() {
         <Button
           variant="ghost"
           size="icon"
-          className="relative h-10 w-10 cursor-pointer rounded-full"
+          className="relative h-10 w-10 cursor-pointer rounded-full bg-accent/50"
         >
           <ShoppingBag className="h-4 w-4" />
           <span className="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-black px-1 text-[10px] text-white">
@@ -109,15 +111,20 @@ function Navbar() {
         <Button
           variant="ghost"
           size="icon"
-          className="relative h-10 w-10 cursor-pointer rounded-full"
+          className="relative h-10 w-10 cursor-pointer rounded-full bg-accent/50"
         >
           <Heart className="h-4 w-4" />
           <span className="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-black px-1 text-[10px] text-white">
             2
           </span>
         </Button>
-
-        <ProfileMenu />
+        {token ? (
+          <ProfileMenu />
+        ) : (
+          <Link to={"/login"}>
+            <Button className={"rounded-none px-5 py-4.5"}>Login</Button>
+          </Link>
+        )}
       </div>
     </header>
   );
