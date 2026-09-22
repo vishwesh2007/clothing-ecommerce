@@ -1,6 +1,6 @@
 import express from "express";
-import authMiddleware from "../middleware/authMiddleware.js";
-import adminMiddleware from "../middleware/adminMiddleware.js";
+import authMiddleware from "../Middleware/authMiddleware.js";
+import adminMiddleware from "../Middleware/adminMiddleware.js";
 import {
   createCategory,
   displayCategories,
