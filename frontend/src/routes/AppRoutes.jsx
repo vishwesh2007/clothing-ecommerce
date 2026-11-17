@@ -21,6 +21,8 @@ import Product from "@/pages/admin/Product";
 import Customers from "@/pages/admin/Customers";
 import Setting from "@/pages/admin/Setting";
 import AddProducts from "@/pages/admin/AddProducts";
+import Footer from "@/components/layout/Footer";
+import Cart from "@/components/common/Cart";
 
 const PublicLayout = () => {
   return (
@@ -29,6 +31,7 @@ const PublicLayout = () => {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 };
@@ -60,6 +63,7 @@ function AppRoutes() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/cart" element={<Cart />} />
 
             <Route element={<ProtectedRoute />}>
               <Route path="/profile" element={<Profile />} />

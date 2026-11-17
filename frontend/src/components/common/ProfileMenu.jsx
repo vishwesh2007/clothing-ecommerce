@@ -26,11 +26,13 @@ export default function ProfileMenu() {
     localStorage.removeItem("token");
     setLogin(false);
     navigate("/");
+    window.location.reload();
   };
 
   const handleNavigation = (path) => {
     if (!isLogin) {
       navigate("/login");
+      window.location.reload();
     } else {
       navigate(path);
     }

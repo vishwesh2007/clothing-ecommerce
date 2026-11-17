@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 import ProfileMenu from "../common/ProfileMenu";
 import { Heart, ShoppingBag } from "lucide-react";
@@ -11,12 +11,14 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import SearchBar from "../common/SearchBar";
+import { useEffect, useState } from "react";
 
 function Navbar() {
-  const token = localStorage.getItem("token");
+  const [token] = useState(() => localStorage.getItem("token"));
+  const navigate = useNavigate("");
 
   return (
-    <header className="flex top-0 sticky z-50 items-center justify-between border-b border-[#E7E3DC] bg-white px-20 py-4 text-ink">
+    <header className="flex top-0 sticky z-50 items-center justify-between border-b border-[#E7E3DC] bg-white px-20 py-3 text-ink">
       <div className="flex items-center gap-30 text-ink-soft">
         <Link to="/" className="text-xl font-bold text-ink">
           VENANCO
@@ -97,7 +99,7 @@ function Navbar() {
       <div className="flex items-center gap-2">
         <SearchBar />
 
-        <Button
+        <Button onClick={()=>navigate("/cart")}
           variant="ghost"
           size="icon"
           className="relative h-10 w-10 cursor-pointer rounded-full bg-accent/50"
@@ -131,4 +133,3 @@ function Navbar() {
 }
 
 export default Navbar;
-  

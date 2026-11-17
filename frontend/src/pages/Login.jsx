@@ -30,8 +30,10 @@ function Login() {
         console.log("token available");
         if (userRole === "admin") {
           navigate("/admin/dashboard");
+          window.location.reload();
         } else {
           navigate("/");
+          window.location.reload();
         }
       } else {
         toast.error("token not available");
