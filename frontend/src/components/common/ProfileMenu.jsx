@@ -26,7 +26,7 @@ export default function ProfileMenu() {
     localStorage.removeItem("token");
     setLogin(false);
     navigate("/");
-    window.location.reload();
+    window.location.reload(); 
   };
 
   const handleNavigation = (path) => {
